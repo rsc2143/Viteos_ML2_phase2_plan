@@ -45,14 +45,7 @@
                                                             "resources": ["Rani", "IT", "Rohit"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest"
-                                                          },
-                                                "Total Time":  {
-                                                            "_comment": "Total Time",
-                                                            "start": "ML2_Phase2_start_date",
-                                                            "order": "total_time",
-                                                            "duration": null,
-                                                            "time_continued": "Total Time Task"
-                                                          }
+                                                          }                                                          }
 
 
 
@@ -63,12 +56,6 @@
                                       "_comment_color": "Lime or light green",
                                       "color": "#00FF00",
                                       "tasks": {
-                                                "Total Time":  {
-                                                            "_comment": "Total Time",
-                                                            "start": "Start from last project end date",
-                                                            "duration": 14,
-                                                            "time_continued": "Total Time Task"
-                                                          }
 
                                                }
                                       },
