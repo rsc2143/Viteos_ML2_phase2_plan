@@ -1,0 +1,106 @@
+{
+  "_comment": "Below is the json file which will help create a Gantt chart for Phase 2 of ML Recon.",
+  "_developer": "Rohit Singh Chauhan",
+  "_all_date_formats": "dd-mm-yyyy",
+  "_created_date": "08-09-2021",
+  "ML2_Phase2_start_date": "13-09-2021",
+
+  "projects": {
+              "permission_access":    {
+                                      "_comment_color": "Yellow",
+                                      "color": "#FFFF00",
+                                      "tasks": {
+                                                "Jenkins": {
+                                                            "_comment": "- Requirement gathering \n- Install Jenkins \n- Get Jenkins Docker to operate on assigned port",
+                                                            "start": "ML2_Phase2_start_date",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "False, take from start"
+                                                          },
+                                                "Docker":  {
+                                                            "_comment": "- Requirement gathering \n- Install Docker \n- Add all users to use Docker added to docker users group on windows machine",
+                                                            "start": "ML2_Phase2_start_date",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "False, take from start"
+                                                          },
+                                                "Super User Creation":  {
+                                                            "_comment": "- Requirement gathering \n- Make super user for Phase 2",
+                                                            "start": "ML2_Phase2_start_date",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "False, take from start"
+                                                          },
+                                                "Firewall access for package installations":  {
+                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "start": "ML2_Phase2_start_date",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest"
+                                                          },
+                                                "Total Time":  {
+                                                            "_comment": "Total Time",
+                                                            "start": "ML2_Phase2_start_date",
+                                                            "order": "total_time",
+                                                            "duration": null,
+                                                            "time_continued": "Total Time Task"
+                                                          }
+
+
+
+                                              }
+
+                                      },
+              "code_design":          {
+                                      "_comment_color": "Lime or light green",
+                                      "color": "#00FF00",
+                                      "tasks": {
+                                                "Total Time":  {
+                                                            "_comment": "Total Time",
+                                                            "start": "Start from last project end date",
+                                                            "duration": 14,
+                                                            "time_continued": "Total Time Task"
+                                                          }
+
+                                               }
+                                      },
+              "code_refactoring":     {
+
+                                      },
+              "new_code_integration": {
+
+                                      },
+              "api":                  {
+
+                                      },
+              "docker":               {
+
+                                      },
+              "jenkins":              {
+
+                                      },
+              "kubernetes_cloud":     {
+
+                                      },
+              "deployment":           {
+
+                                      },
+              "testing":              {
+
+                                      },
+              "user_approval":        {
+
+                                      }
+
+
+
+      }
+}

@@ -1,0 +1,5 @@
+Unit tests for MongoDB database can be the following:
+1. Check the connection string by following methods:
+	a. Can I list down the names of the databases inside the mongo server I have connected to. For example, if I am connecting to 10.1.79.212 server, and the parameters.json file describes the 'ReconDB' database has the collection MLPrediction_125, then I should be able to connect to the ReconDB database and list the name of the collection MLPrediction_125 after connecting  
+	b. Can I create a collection inside the database by inserting some dummy data inside the database.
+	c. 
