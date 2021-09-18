@@ -9,44 +9,80 @@
               "permission_access":    {
                                       "_comment_color": "Yellow",
                                       "color": "#FFFF00",
+                                      "order": 1,
                                       "tasks": {
                                                 "Jenkins": {
                                                             "_comment": "- Requirement gathering \n- Install Jenkins \n- Get Jenkins Docker to operate on assigned port",
-                                                            "start": "ML2_Phase2_start_date",
                                                             "order": 1,
                                                             "duration": 3,
                                                             "resources": ["Rani", "IT", "Rohit"],
                                                             "state": "TBD",
-                                                            "time_continued": "False, take from start"
+                                                            "time_continued": "False, take from ML2_Phase2_start_date"
                                                           },
                                                 "Docker":  {
                                                             "_comment": "- Requirement gathering \n- Install Docker \n- Add all users to use Docker added to docker users group on windows machine",
-                                                            "start": "ML2_Phase2_start_date",
                                                             "order": 1,
-                                                            "duration": 3,
+                                                            "duration": 7,
                                                             "resources": ["Rani"],
                                                             "state": "TBD",
-                                                            "time_continued": "False, take from start"
+                                                            "time_continued": "False, take from ML2_Phase2_start_date"
                                                           },
                                                 "Super User Creation":  {
                                                             "_comment": "- Requirement gathering \n- Make super user for Phase 2",
-                                                            "start": "ML2_Phase2_start_date",
                                                             "order": 1,
                                                             "duration": 3,
                                                             "resources": ["Rani", "IT", "Rohit"],
                                                             "state": "TBD",
-                                                            "time_continued": "False, take from start"
+                                                            "time_continued": "False, take from ML2_Phase2_start_date"
                                                           },
                                                 "Firewall access for package installations":  {
                                                             "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
-                                                            "start": "ML2_Phase2_start_date",
                                                             "order": 2,
                                                             "duration": 3,
                                                             "resources": ["Rani", "IT", "Rohit"],
                                                             "state": "TBD",
-                                                            "time_continued": "True, take from lastest"
-                                                          }                                                          }
-
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "test_task_order_2":  {
+                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "order": 2,
+                                                            "duration": 5,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "test_task_order_2_second":  {
+                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "order": 2,
+                                                            "duration": 2,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "test_task_order_2_third":  {
+                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "order": 2,
+                                                            "duration": 2,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "test_task_order_3":  {
+                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "order": 3,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "test_task_order_4":  {
+                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "order": 4,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          }
 
 
                                               }
@@ -55,35 +91,88 @@
               "code_design":          {
                                       "_comment_color": "Lime or light green",
                                       "color": "#00FF00",
+                                      "order": 2,
                                       "tasks": {
+                                                "test_task_order_1": {
+                                                            "_comment": "- Requirement gathering \n- Install Jenkins \n- Get Jenkins Docker to operate on assigned port",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "test_task_order_2":  {
+                                                            "_comment": "- Requirement gathering \n- Install Docker \n- Add all users to use Docker added to docker users group on windows machine",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  }
 
                                                }
                                       },
               "code_refactoring":     {
+                                      "order": 3,
+                                      "tasks": {
+
+                                               }
 
                                       },
               "new_code_integration": {
+                                      "order": 4,
+                                      "tasks": {
+
+                                               }
 
                                       },
               "api":                  {
+                                      "order": 5,
+                                      "tasks": {
+
+                                               }
 
                                       },
               "docker":               {
+                                      "order": 6,
+                                      "tasks": {
+
+                                               }
 
                                       },
               "jenkins":              {
+                                      "order": 7,
+                                      "tasks": {
+
+                                               }
 
                                       },
               "kubernetes_cloud":     {
+                                      "order": 8,
+                                      "tasks": {
+
+                                               }
 
                                       },
               "deployment":           {
+                                      "order": 9,
+                                      "tasks": {
+
+                                               }
 
                                       },
               "testing":              {
+                                      "order": 10,
+                                      "tasks": {
+
+                                               }
 
                                       },
               "user_approval":        {
+                                      "order": 11,
+                                      "tasks": {
+
+                                               }
 
                                       }
 
