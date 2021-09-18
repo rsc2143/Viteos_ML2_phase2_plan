@@ -117,6 +117,30 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                           },
+                                                "Jenkins": {
+                                                            "_comment": "- Requirement gathering \n- Install Jenkins \n- Get Jenkins Docker to operate on assigned port",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Docker":  {
+                                                            "_comment": "- Requirement gathering \n- Install Docker \n- Add all users to use Docker added to docker users group on windows machine",
+                                                            "order": 1,
+                                                            "duration": 7,
+                                                            "resources": ["Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Super User Creation":  {
+                                                            "_comment": "- Requirement gathering \n- Make super user for Phase 2",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
                                                 "test_task_order_2":  {
                                                             "_comment": "- Requirement gathering \n- Install Docker \n- Add all users to use Docker added to docker users group on windows machine",
                                                             "order": 2,
