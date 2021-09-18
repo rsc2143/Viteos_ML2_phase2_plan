@@ -75,7 +75,23 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
+                                                "test_task_order_3_second":  {
+                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "order": 3,
+                                                            "duration": 5,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
                                                 "test_task_order_4":  {
+                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "order": 4,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "test_task_order_4_second":  {
                                                             "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
                                                             "order": 4,
                                                             "duration": 3,

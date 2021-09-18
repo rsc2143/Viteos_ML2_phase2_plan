@@ -3,6 +3,7 @@ import gantt
 import json
 class ReadTimelineJson:
     time_continued_values_list = ["False, take from ML2_Phase2_start_date",
+                                  "First task encountered in task order",
                                   "True, take from lastest task in previous order",
                                   "True, take from lastest project"]
 
@@ -43,6 +44,28 @@ class ReadTimelineJson:
                         return(list_tasks_in_project)
                     else:
                         raise Exception('No "tasks" key in the {param_project} project defined in {self.path} file'.format(self=self))
+                else:
+                    raise Exception('Project value passed in param_project argument is not present in projects defined in {self.path}'.format(self=self))
+            else:
+                raise Exception('Project value passed in param_project argument is empty string')
+        else:
+            raise Exception('Project is not passed and param_project type is the default, i.e., None')
+
+    def return_tasks_only_for_single_task_order_inside_project(self, param_project, param_task_order):
+        if(param_project is not None):
+            if(str(param_project).strip() != ""):
+                if(param_project in self.return_all_timeline_projects()):
+                    if('tasks' in self.timeline_json_dict['projects'][param_project]):
+                        task_list_to_return = []
+                        for task in self.timeline_json_dict['projects'][param_project]['tasks']:
+                            if(self.timeline_json_dict['projects'][param_project]['tasks'][task]['order'] == param_task_order):
+                                task_list_to_return.append(task)
+                            else:
+                                continue
+                        return(task_list_to_return)
+                    else:
+                        raise Exception('No "tasks" key in the {param_project} project defined in {self.path} file'.format(self=self))
+
                 else:
                     raise Exception('Project value passed in param_project argument is not present in projects defined in {self.path}'.format(self=self))
             else:
@@ -139,13 +162,15 @@ class ReadTimelineJson:
                 if(param_time_continued == "False, take from ML2_Phase2_start_date" or param_time_continued == "False"):
                     start_date = self.return_datetime_value_for_str_date(self.timeline_json_dict["ML2_Phase2_start_date"])
                     end_date = start_date + timedelta(days=param_duration_to_add_to_get_end_date)
-                elif(param_time_continued == "True, take from lastest task in same order" or param_time_continued == "True, take from lastest task in previous order"or param_time_continued == "True, take from lastest project" or param_time_continued == "True"):
+                # elif(param_time_continued == "First task encountered in task order" or param_time_continued == "True, take from lastest task in previous order" or param_time_continued == "True, take from lastest project" or param_time_continued == "True"):
+                else:
                     if(param_date_to_start_from_in_datetime_format is not None):
-                        if(isinstance(param_date_to_start_from_in_datetime_format,datetime) == True):
+                        if(isinstance(param_date_to_start_from_in_datetime_format,datetime) == True or isinstance(param_date_to_start_from_in_datetime_format,date) == True):
                             start_date =  param_date_to_start_from_in_datetime_format + timedelta(days=param_duration_to_add_to_get_start_date)
                             end_date = start_date + timedelta(days=param_duration_to_add_to_get_end_date)
                         else:
-                            Exception('End Date to start from value passed in param_date_to_start_from_in_datetime_format argument is supposed to be datetime, but format of variable passed is not datetime')
+                            print(type(param_date_to_start_from_in_datetime_format))
+                            raise Exception('End Date to start from value passed in param_date_to_start_from_in_datetime_format argument is supposed to be datetime, but format of variable passed is not datetime')
                     else:
                         raise Exception('End Date to start from value is not passed and param_date_to_start_from_in_datetime_format type is the default, i.e., None')
             else:
@@ -166,17 +191,6 @@ class ReadTimelineJson:
             all_task_order_set.add(self.timeline_json_dict['projects'][param_project][self.check_key_present_for_project_key_combination(param_project = param_project, param_key = 'tasks')][task][self.check_key_present_for_project_task_key_combination(param_project = param_project, param_task = task, param_key = 'order')])
         return list(all_task_order_set)
 
-    # def assign_start_and_end_date_based_on_time_continued_value(self, param_time_continued = None, param_duration = None):
-    #     if(param_time_continued is not None):
-    #         if(str(param_time_continued).strip() != ""):
-    #             if(param_date_in_str == "ML2_Phase2_start_date" or param_date_in_str == "False, take from start"):
-    #                 return datetime.date(datetime.strptime(param_date_in_str, param_date_in_str_format))
-    #         else:
-    #             raise Exception('Time Continued value passed in param_time_continued argument is empty string')
-    #     else:
-    #         raise Exception('Time Continued is not passed and param_time_continued type is the default, i.e., None')
-
-
 
     def return_new_timeline_dict_with_start_and_end_dates(self):
         new_timeline_dict = self.timeline_json_dict
@@ -187,43 +201,91 @@ class ReadTimelineJson:
                 if(project_order == 1):
                     # project_start_date = self.return_datetime_value_for_str_date(self.timeline_json_dict["ML2_Phase2_start_date"])
                     if(project_order == self.timeline_json_dict['projects'][project][self.check_key_present_for_project_key_combination(param_project = project, param_key = 'order')]):
-
+                        print("     project order")
+                        print("     " + str(project_order))
                         for task_order in self.return_all_task_orders_in_single_project(project):
                             # timecontinued_for_same_task_order = "temp_value_to_be_replaced"
-                            timecontinued_for_same_task_order = ""
-                            task_order_start_date_list = []
-                            task_order_end_date_list = []
-                            for task in self.return_all_tasks_for_single_project(project):
+                            print("         task_order     " + str(task_order))
+                            timecontinued_for_same_task_order = "First task encountered in task order"
+                            print("         time continued     " + timecontinued_for_same_task_order)
+
+                            # task_order_start_date_list = []
+                            # task_order_end_date_list = []
+                            # for task in self.return_all_tasks_for_single_project(project):
+                            for task in self.return_tasks_only_for_single_task_order_inside_project(param_project = project, param_task_order = task_order):
+                                print("                 " + task)
+                                print("                 " + str(task_order))
 
                                 if(task_order == self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='order')]):
                                     if(task_order == 1):
-                                        if(self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')] == "False, take from ML2_Phase2_start_date"):
+                                        if((timecontinued_for_same_task_order == "First task encountered in task order") & (self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')] == "False, take from ML2_Phase2_start_date")):
+                                            task_order_start_date_list = []
+                                            task_order_end_date_list = []
                                             temp_start_date, temp_end_date = self.return_datetime_value_for_startdate_enddate_based_on_timecontinued_and_duration(param_time_continued = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')],
                                                                                                                                                                   param_duration_to_add_to_get_end_date = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='duration')])
                                             new_timeline_dict['projects'][project]['tasks'][task]['start_date'] = temp_start_date
                                             new_timeline_dict['projects'][project]['tasks'][task]['end_date'] = temp_end_date
+                                            task_order_start_date_list.append(temp_start_date)
+                                            task_order_end_date_list.append(temp_end_date)
                                             timecontinued_for_same_task_order = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')]
-                                            # task_order_start_date_list.append(task_order_start_date)
-                                            # task_order_end_date_list.append(task_order_end_date)
+                                        elif(timecontinued_for_same_task_order == self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')]):
+                                            temp_start_date, temp_end_date = self.return_datetime_value_for_startdate_enddate_based_on_timecontinued_and_duration(param_time_continued = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')],
+                                                                                                                                                                  param_duration_to_add_to_get_end_date = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='duration')])
+                                            new_timeline_dict['projects'][project]['tasks'][task]['start_date'] = temp_start_date
+                                            new_timeline_dict['projects'][project]['tasks'][task]['end_date'] = temp_end_date
+                                            task_order_start_date_list.append(temp_start_date)
+                                            task_order_end_date_list.append(temp_end_date)
+                                            timecontinued_for_same_task_order = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')]
+
                                         else:
                                             raise Exception("project = {project} and task = {task} can only have time_continued = 'False, take from ML2_Phase2_start_date' since project order == 1 and task order == 1 can only start from ML2_Phase2_start_date".format(project=project, task=task))
+                                        task_order_end_date_to_pass_on = max(task_order_end_date_list)
+                                        print("                 " + timecontinued_for_same_task_order)
+                                        print("start_date_list")
+                                        print(task_order_start_date_list)
+                                        print("end_date_list")
+                                        print(task_order_end_date_list)
+                                    else:
+                                        if(timecontinued_for_same_task_order == "First task encountered in task order"):
+                                            task_order_start_date_list = []
+                                            task_order_end_date_list = [task_order_end_date_to_pass_on]
+                                            temp_start_date, temp_end_date = self.return_datetime_value_for_startdate_enddate_based_on_timecontinued_and_duration(param_time_continued = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')],
+                                                                                                                                                                  param_duration_to_add_to_get_end_date = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='duration')],
+                                                                                                                                                                  # param_duration_to_add_to_get_start_date = self.read_max_duration_for_same_order_in_project_task_combination(param_project = project, param_order = task_order),
+                                                                                                                                                                  param_duration_to_add_to_get_start_date = 0,
+                                                                                                                                                                  param_date_to_start_from_in_datetime_format = max(task_order_end_date_list))
+                                            new_timeline_dict['projects'][project]['tasks'][task]['start_date'] = temp_start_date
+                                            new_timeline_dict['projects'][project]['tasks'][task]['end_date'] = temp_end_date
+                                            task_order_start_date_list.append(temp_start_date)
+                                            task_order_end_date_list.append(temp_end_date)
+                                        elif(timecontinued_for_same_task_order == self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')]):
+                                            temp_start_date, temp_end_date = self.return_datetime_value_for_startdate_enddate_based_on_timecontinued_and_duration(param_time_continued = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')],
+                                                                                                                                                                  param_duration_to_add_to_get_end_date = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='duration')],
+                                                                                                                                                                  # param_duration_to_add_to_get_start_date = self.read_max_duration_for_same_order_in_project_task_combination(param_project = project, param_order = task_order),
+                                                                                                                                                                  param_duration_to_add_to_get_start_date = 0,
+                                                                                                                                                                  param_date_to_start_from_in_datetime_format = min(task_order_start_date_list))
+                                            new_timeline_dict['projects'][project]['tasks'][task]['start_date'] = temp_start_date
+                                            new_timeline_dict['projects'][project]['tasks'][task]['end_date'] = temp_end_date
+                                            task_order_start_date_list.append(temp_start_date)
+                                            task_order_end_date_list.append(temp_end_date)
 
-                    #                 else:
-                    #                     if(timecontinued_for_same_task_order == "" or timecontinued_for_same_task_order == self.timeline_json_dict['project'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')]):
-                    #                         if(task_order > 1 & task_order < max(self.return_all_tasks_for_single_project(project))):
-                    #                             temp_start_date, temp_end_date = self.return_datetime_value_for_startdate_enddate_based_on_timecontinued_and_duration(param_time_continued = self.timeline_json_dict['project'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')],
-                    #                                                                                                                                                   param_duration_to_add_to_get_end_date = self.timeline_json_dict['project'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='duration')],
-                    #                                                                                                                                                   param_duration_to_add_to_get_start_date = self.read_max_duration_for_same_order_in_project_task_combination(param_project = project, param_order = task_order),
-                    #                                                                                                                                                   param_date_to_start_from_in_datetime_format = None)
+
+                                        timecontinued_for_same_task_order = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')]
+                                        task_order_end_date_to_pass_on = max(task_order_end_date_list)
+                                        print("                 " + timecontinued_for_same_task_order)
+                                        print("start_date_list")
+                                        print(task_order_start_date_list)
+                                        print("end_date_list")
+                                        print(task_order_end_date_list)
                     #                         else:
-                    #                             temp_start_date, temp_end_date = self.return_datetime_value_for_startdate_enddate_based_on_timecontinued_and_duration(param_time_continued = self.timeline_json_dict['project'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')],
-                    #                                                                                                                                                   param_duration_to_add_to_get_end_date = self.timeline_json_dict['project'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='duration')],
+                    #                             temp_start_date, temp_end_date = self.return_datetime_value_for_startdate_enddate_based_on_timecontinued_and_duration(param_time_continued = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')],
+                    #                                                                                                                                                   param_duration_to_add_to_get_end_date = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='duration')],
                     #                                                                                                                                                   param_duration_to_add_to_get_start_date = self.read_max_duration_for_same_order_in_project_task_combination(param_project = project, param_order = task_order),
                     #                                                                                                                                                   param_date_to_start_from_in_datetime_format = None)
                     #
                     #                     new_timeline_dict['project'][project]['tasks'][task]['start_date'] = temp_start_date
                     #                     new_timeline_dict['project'][project]['tasks'][task]['end_date'] = temp_end_date
-                    #                     timecontinued_for_same_task_order = self.timeline_json_dict['project'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')]
+                    #                     timecontinued_for_same_task_order = self.timeline_json_dict['projects'][project]['tasks'][task][self.check_key_present_for_project_task_key_combination(param_project=project, param_task=task, param_key='time_continued')]
                     #                     task_order_start_date_list.append(task_order_start_date)
                     #                     task_order_end_date_list.append(task_order_end_date)
                     #
