@@ -1,15 +1,16 @@
 
-# Import Statementsimport gantt
-import datetime
+# Import Statements
+import gantt
+from datetime import date
 
 
 # Creating Resources
-IT = gantt.Resource("IT")
-Pratik = gantt.Resource("Pratik")
-Rohit = gantt.Resource("Rohit")
-Abhijeet = gantt.Resource("Abhijeet")
 Rani = gantt.Resource("Rani")
 Ritesh = gantt.Resource("Ritesh")
+IT = gantt.Resource("IT")
+Abhijeet = gantt.Resource("Abhijeet")
+Rohit = gantt.Resource("Rohit")
+Pratik = gantt.Resource("Pratik")
 
 
 # Creating tasks for project : permission_access

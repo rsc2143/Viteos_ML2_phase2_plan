@@ -444,8 +444,8 @@ class CustomGantt(ReadTimelineJson):
 if __name__ == '__main__':
     from custom_gantt import ReadTimelineJson, CustomGantt
     import pprint
-    custom_gantt_obj = CustomGantt('timeline.json', 'custom_gantt_task.py', 'all_projects_timeline.svg')
-    import_statement_list = ["import gantt","import datetime"]
+    custom_gantt_obj = CustomGantt('timeline.json', 'custom_gantt_task.py', 'all_projects_timeline')
+    import_statement_list = ["import gantt","from datetime import date"]
     py_file_to_execute_name = 'custom_gantt_py_file.py'
     custom_gantt_obj.write_string_text_for_import_statements(import_statement_list)
     custom_gantt_obj.write_string_text_for_resources()
