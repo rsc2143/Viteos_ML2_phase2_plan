@@ -73,6 +73,18 @@ class ReadTimelineJson:
         else:
             raise Exception('Project is not passed and param_project type is the default, i.e., None')
 
+    def return_all_resources(self):
+        resources_list = []
+        for project in self.return_all_timeline_projects():
+            for task in self.return_all_tasks_for_single_project(project):
+                single_task_resources_list = self.timeline_json_dict['projects'][project]['tasks'][task]['resources']
+                resources_list.append(single_task_resources_list)
+        resources_set = set()
+        for resource_list in resources_list:
+            for resource in resource_list:
+                resources_set.add(resource)
+        return list(resources_set)
+
     def check_key_present_for_project_task_key_combination(self, param_project = None, param_task = None,param_key = None):
         if(param_task is not None):
             if(str(param_task).strip() != ""):
@@ -192,6 +204,7 @@ class ReadTimelineJson:
         return list(all_task_order_set)
 
 
+
     def return_new_timeline_dict_with_start_and_end_dates(self):
         new_timeline_dict = self.timeline_json_dict
         project_start_date = None
@@ -286,7 +299,7 @@ class ReadTimelineJson:
 
                 project_order_end_date_to_pass_on = max(task_order_end_date_list)
 
-        return new_timeline_dict
+        return new_timeline_dict, project_order_end_date_to_pass_on
 
 # pseudocode to get start and end date for each task within a project
 # 1. go inside task with a loop for each task based on order
@@ -315,36 +328,126 @@ class ReadTimelineJson:
 #         i. 3i and 3ii
 
 
-# class custom_gantt:
-#     def __init__():
-#         pass
-#     def read_duration(param_duration):
-#         pass
-#     def custom_gantt_task(param_name = None,
-#                                         param_start = None,
-#                                         param_stop=None,
-#                                         param_duration=None,
-#                                         param_depends_of=None,
-#                                         param_resources=None,
-#                                         param_percent_done=None,
-#                                         param_color=None,
-#                                         param_fullname=None,
-#                                         param_display=True,
-#                                         param_state = '',
-#                                         param_project=None):
-#         """
-#         This function defines a new gantt task and adds the task to the gantt project
-#
-#         :param <all_gantt_task_params>:   all parameters used to define a gantt.Task
-#         :param param_project:             gantt.project to which the newly defined task will be added to
-#         :return:                          newly defined gantt.Task
-#
-#         """
-#         if(param_name) != "Total Time":
-#             fun_task = gantt.Task(name=param_name, start=param_start, stop=param_stop, duration=param_duration, depends_of=param_depends_of, resources=param_resources, percent_done=param_percent_done, color=param_color, fullname=param_fullname, display=param_display, state=param_state)
-#             param_project.add_task(fun_task)
-#             fun_return_dict = {
-#                                 "task":         fun_task,
-#                                 "end_date":     fun_end_date,
-#                                 "duration":     fun_duration}
-#             return fun_return_dict
+class CustomGantt(ReadTimelineJson):
+    def __init__(self, param_json_filepath, param_python_file_filepath_to_append_to, param_all_projects_svg_filepath):
+        super().__init__(param_json_filepath)
+        if(param_python_file_filepath_to_append_to is not None):
+            if(param_python_file_filepath_to_append_to.strip() != ""):
+                self.filepath_to_append_to = param_python_file_filepath_to_append_to
+            else:
+                raise Exception("param_python_file_filepath_to_append_to is empty string. Please give a value")
+        else:
+            raise Exception("param_python_file_filepath_to_append_to is left empty. Please give a string value as param_python_file_filepath_to_append_to cannot be left empty")
+        if(param_all_projects_svg_filepath is not None):
+            if(param_all_projects_svg_filepath.strip() != ""):
+                self.all_projects_svg_filepath = param_all_projects_svg_filepath
+            else:
+                raise Exception("param_all_projects_svg_filepath is empty string. Please give a value")
+        else:
+            raise Exception("param_all_projects_svg_filepath is left empty. Please give a string value as param_all_projects_svg_filepath cannot be left empty")
+        self.new_timeline_dict_from_super, self.all_projects_end_date = super().return_new_timeline_dict_with_start_and_end_dates()
+        self.all_projects_start_date = self.return_datetime_value_for_str_date(self.new_timeline_dict_from_super["ML2_Phase2_start_date"])
+        self.all_projects_today_date = date.today()
+
+        self.all_projects_end_date_year, self.all_projects_end_date_month, self.all_projects_end_date_day, = self.all_projects_end_date.year, self.all_projects_end_date.month, self.all_projects_end_date.day
+        self.all_projects_start_date_year, self.all_projects_start_date_month, self.all_projects_start_date_day, = self.all_projects_start_date.year, self.all_projects_start_date.month, self.all_projects_start_date.day
+        self.all_projects_today_date_year, self.all_projects_today_date_month, self.all_projects_today_date_day, = self.all_projects_today_date.year, self.all_projects_today_date.month, self.all_projects_today_date.day
+
+    def write_string_text_for_import_statements(self, param_import_statement_list):
+        file_to_write = open(self.filepath_to_append_to,"a")
+        file_to_write.write("\n")
+        file_to_write.write("# Import Statements")
+        file_to_write.write("\n")
+        for import_statement in param_import_statement_list:
+            file_to_write.write(import_statement)
+            file_to_write.write("\n")
+        file_to_write.write("\n")
+
+    def write_string_text_for_resources(self):
+        file_to_write = open(self.filepath_to_append_to,"a")
+        file_to_write.write("\n")
+        file_to_write.write("# Creating Resources")
+        file_to_write.write("\n")
+        for resource_name in self.return_all_resources():
+            file_to_write.write("{resource_name} = gantt.Resource(\"{resource_name}\")\n".format(resource_name=resource_name))
+        file_to_write.write("\n")
+
+    def create_tasks_for_project(self, param_project_name):
+        file_to_write = open(self.filepath_to_append_to,"a")
+        file_to_write.write("\n")
+        file_to_write.write("# Creating tasks for project : {param_project_name}".format(param_project_name=param_project_name))
+        file_to_write.write("\n")
+        file_to_write.write("tasks_for_project_{format_param_project_name} = []".format(format_param_project_name=param_project_name))
+        file_to_write.write("\n")
+
+        project_color = self.new_timeline_dict_from_super['projects'][param_project_name]['color']
+        for task in self.return_all_tasks_for_single_project(param_project_name):
+            task_name = task
+            task_dict = self.new_timeline_dict_from_super['projects'][param_project_name]['tasks'][task]
+            task_start_date = task_dict['start_date']
+            task_start_date_year = task_start_date.year
+            task_start_date_month = task_start_date.month
+            task_start_date_day = task_start_date.day
+
+            task_end_date = task_dict['end_date']
+            task_duration = task_dict['duration']
+            task_resources = task_dict['resources']
+            file_to_write.write("\n")
+            file_to_write.write("task_{format_task_name}_project_{format_param_project_name} = gantt.Task(name=\"{format_task_name}\", start=date({format_task_start_date_year},{format_task_start_date_month},{format_task_start_date_day}), duration={format_task_duration}, resources={format_task_resources}, color=\"{format_project_color}\")".format(format_task_name=task_name,
+                                                                                                                                                                                                                                                             format_param_project_name=param_project_name,
+                                                                                                                                                                                                                                                             format_task_start_date_year=task_start_date_year,
+                                                                                                                                                                                                                                                             format_task_start_date_month=task_start_date_month,
+                                                                                                                                                                                                                                                             format_task_start_date_day=task_start_date_day,
+                                                                                                                                                                                                                                                             format_task_duration=task_duration,
+                                                                                                                                                                                                                                                             format_task_resources=task_resources,
+                                                                                                                                                                                                                                                             format_project_color=project_color).replace("'",""))
+
+            file_to_write.write("\n")
+            file_to_write.write("tasks_for_project_{format_param_project_name}.append(task_{format_task_name}_project_{format_param_project_name})".format(format_param_project_name=param_project_name,
+                                                                                                                                                           format_task_name=task_name))
+            file_to_write.write("\n")
+
+        file_to_write.write("\n")
+        file_to_write.write("# Creating project : {format_param_project_name}".format(format_param_project_name=param_project_name))
+        file_to_write.write("\n")
+        file_to_write.write("project_{format_param_project_name} = gantt.Project(name='{format_param_project_name}')".format(format_param_project_name=param_project_name))
+        file_to_write.write("\n")
+        file_to_write.write("for task in tasks_for_project_{format_param_project_name}:".format(format_param_project_name=param_project_name))
+        file_to_write.write("\n")
+        file_to_write.write("   project_{format_param_project_name}.add_task(task)".format(format_param_project_name=param_project_name))
+        file_to_write.write("\n")
+
+    def create_all_projects(self):
+        file_to_write = open(self.filepath_to_append_to,"a")
+        file_to_write.write("\n")
+        file_to_write.write("all_projects = gantt.Project(name='All Projects')")
+        file_to_write.write("\n")
+
+        for project in self.return_all_timeline_projects():
+            self.create_tasks_for_project(project)
+            file_to_write.write("\n")
+            file_to_write.write("all_projects.add_task(project_{format_project_name})".format(format_project_name=project))
+
+        file_to_write.write("\n")
+        file_to_write.write("all_projects.make_svg_for_resources(filename=\"{format_all_projects_svg_filepath}_daily_scale.svg\",\n".format(format_all_projects_svg_filepath=self.all_projects_svg_filepath))
+        file_to_write.write("                                    today=date({format_all_projects_today_date_year},{format_all_projects_today_date_month},{format_all_projects_today_date_day}),\n".format(format_all_projects_today_date_year=self.all_projects_today_date_year,
+                                                                                                                                                                         format_all_projects_today_date_month=self.all_projects_today_date_month,
+                                                                                                                                                                         format_all_projects_today_date_day=self.all_projects_today_date_day))
+        file_to_write.write("                                    start=date({format_all_projects_start_date_year},{format_all_projects_start_date_month},{format_all_projects_start_date_day}),\n".format(format_all_projects_start_date_year=self.all_projects_start_date_year,
+                                                                                                                                                                         format_all_projects_start_date_month=self.all_projects_start_date_month,
+                                                                                                                                                                         format_all_projects_start_date_day=self.all_projects_start_date_day))
+        file_to_write.write("                                    end=date({format_all_projects_end_date_year},{format_all_projects_end_date_month},{format_all_projects_end_date_day}))\n".format(format_all_projects_end_date_year=self.all_projects_end_date_year,
+                                                                                                                                                                         format_all_projects_end_date_month=self.all_projects_end_date_month,
+                                                                                                                                                                         format_all_projects_end_date_day=self.all_projects_end_date_day))
+
+# End of class CustomGantt
+if __name__ == '__main__':
+    from custom_gantt import ReadTimelineJson, CustomGantt
+    import pprint
+    custom_gantt_obj = CustomGantt('timeline.json', 'custom_gantt_task.py', 'all_projects_timeline.svg')
+    import_statement_list = ["import gantt","import datetime"]
+    py_file_to_execute_name = 'custom_gantt_py_file.py'
+    custom_gantt_obj.write_string_text_for_import_statements(import_statement_list)
+    custom_gantt_obj.write_string_text_for_resources()
+    # custom_gantt_obj.create_tasks_for_project("permission_access")
+    custom_gantt_obj.create_all_projects()

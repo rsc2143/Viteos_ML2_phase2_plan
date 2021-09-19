@@ -151,7 +151,71 @@
                                                   }
 
                                                }
+                                      },
+              "code_refactoring":     {
+                                      "order": 3,
+                                      "tasks": {
+
+                                               }
+
+                                      },
+              "new_code_integration": {
+                                      "order": 4,
+                                      "tasks": {
+
+                                               }
+
+                                      },
+              "api":                  {
+                                      "order": 5,
+                                      "tasks": {
+
+                                               }
+
+                                      },
+              "docker":               {
+                                      "order": 6,
+                                      "tasks": {
+
+                                               }
+
+                                      },
+              "jenkins":              {
+                                      "order": 7,
+                                      "tasks": {
+
+                                               }
+
+                                      },
+              "kubernetes_cloud":     {
+                                      "order": 8,
+                                      "tasks": {
+
+                                               }
+
+                                      },
+              "deployment":           {
+                                      "order": 9,
+                                      "tasks": {
+
+                                               }
+
+                                      },
+              "testing":              {
+                                      "order": 10,
+                                      "tasks": {
+
+                                               }
+
+                                      },
+              "user_approval":        {
+                                      "order": 11,
+                                      "tasks": {
+
+                                               }
+
                                       }
+
 
 
       }
