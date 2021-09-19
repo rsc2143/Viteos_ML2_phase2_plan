@@ -436,9 +436,10 @@ class CustomGantt(ReadTimelineJson):
         file_to_write.write("                                    start=date({format_all_projects_start_date_year},{format_all_projects_start_date_month},{format_all_projects_start_date_day}),\n".format(format_all_projects_start_date_year=self.all_projects_start_date_year,
                                                                                                                                                                          format_all_projects_start_date_month=self.all_projects_start_date_month,
                                                                                                                                                                          format_all_projects_start_date_day=self.all_projects_start_date_day))
-        file_to_write.write("                                    end=date({format_all_projects_end_date_year},{format_all_projects_end_date_month},{format_all_projects_end_date_day}))\n".format(format_all_projects_end_date_year=self.all_projects_end_date_year,
+        file_to_write.write("                                    end=date({format_all_projects_end_date_year},{format_all_projects_end_date_month},{format_all_projects_end_date_day}),\n".format(format_all_projects_end_date_year=self.all_projects_end_date_year,
                                                                                                                                                                          format_all_projects_end_date_month=self.all_projects_end_date_month,
                                                                                                                                                                          format_all_projects_end_date_day=self.all_projects_end_date_day))
+        file_to_write.write("                                    scale=gantt.DRAW_WITH_DAILY_SCALE)")
 
 # End of class CustomGantt
 if __name__ == '__main__':

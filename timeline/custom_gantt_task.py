@@ -6,11 +6,11 @@ from datetime import date
 
 # Creating Resources
 Rani = gantt.Resource("Rani")
-Ritesh = gantt.Resource("Ritesh")
-IT = gantt.Resource("IT")
-Abhijeet = gantt.Resource("Abhijeet")
 Rohit = gantt.Resource("Rohit")
+Abhijeet = gantt.Resource("Abhijeet")
+IT = gantt.Resource("IT")
 Pratik = gantt.Resource("Pratik")
+Ritesh = gantt.Resource("Ritesh")
 
 
 # Creating tasks for project : permission_access
@@ -81,7 +81,8 @@ all_projects = gantt.Project(name='All Projects')
 
 all_projects.add_task(project_permission_access)
 all_projects.add_task(project_code_design)
-all_projects.make_svg_for_resources(filename="all_projects_timeline.svg_daily_scale.svg",
+all_projects.make_svg_for_resources(filename="all_projects_timeline_daily_scale.svg",
                                     today=date(2021,9,19),
                                     start=date(2021,9,13),
-                                    end=date(2021,10,13))
+                                    end=date(2021,10,13),
+                                    scale=gantt.DRAW_WITH_DAILY_SCALE)
