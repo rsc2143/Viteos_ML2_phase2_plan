@@ -59,6 +59,14 @@
                                                             "state": "TBD",
                                                             "time_continued": "False, take from ML2_Phase2_start_date"
                                                           },
+                                                "Decide_issue_logging_mechanism_like_Git_issues":  {
+                                                            "_comment": "Decide on an issue logging mechanism to track and keep one true source of issues with code. If not done, this will lead to incoherent/messy issue tracking over email, which will result in ",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani","Tejas_and_team","Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
                                                 "New_client_data_gathering":  {
                                                             "_comment": "Depending on which clients are to be taken for consideration, gather data for clients. Tejas and team to get the data",
                                                             "order": 2,
@@ -178,6 +186,14 @@
                                                             "resources": ["Rani", "Rohit","Pratik","Abhijeet","Hari","Girish"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Setup_Calls_with_Business_for_new_perspective_of_Existing_clients":  {
+                                                            "_comment": " Take time from business leaders/workers about any new changes they want, what kind of accuracy they are okay with for final delivery",
+                                                            "order": 4,
+                                                            "duration": 4,
+                                                            "resources": ["Rani","Hari","Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
                                                           }
 
 
@@ -196,6 +212,22 @@
                                                             "order": 1,
                                                             "duration": 4,
                                                             "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Decide_business_POCs_for_new_clients":  {
+                                                            "_comment": "Once clients have been decided, make a list of POCs EpowerX team will get in touch with.",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Document_POCs_and_share_with_EpowerX":  {
+                                                            "_comment": "Document POCs and share with EpowerX team",
+                                                            "order": 1,
+                                                            "duration": 1,
+                                                            "resources": ["Rani", "Girish"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                           },
@@ -247,11 +279,27 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                           },
+                                                "Get_Business_POCs_time_of_availability_and_bandwidth":  {
+                                                            "_comment": "Once EpowerX team has ratified the data with or without changes, clients will be decided along with setups to be delivered",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
                                                 "Break_resolution_architecture_design": {
                                                             "_comment": " Share insights from break resolution architecure with team and come to a design concensus",
                                                             "order": 2,
                                                             "duration": 2,
                                                             "resources": ["Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Prepare_task_document_with_business_leaders_for_existing_client_for_any_new_ask": {
+                                                            "_comment": " From exisiting discussions with business leaders, prepare a document for new accuracy required for sign off and any other ask",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani","Girish","Hari"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
@@ -287,6 +335,14 @@
                                       "color": "#FF0000",
                                       "order": 3,
                                       "tasks": {
+                                                "Get_approval_from_EpowerX_team_for_new_accuracy_plus_new_ask": {
+                                                            "_comment": " Read class will assign appropriate data type to data read from db",
+                                                            "order": 1,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani","Hari","Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                },
                                                 "Build_super_class_for_Data_Read_Standardization": {
                                                             "_comment": " Read class will assign appropriate data type to data read from db",
                                                             "order": 1,
@@ -327,6 +383,14 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                 },
+                                                "Revert_with_business_about_EpowerX_comments": {
+                                                            "_comment": " Get into consensus with EpowerX and business leaders about new accuracy projections and new asks",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Hari","Rani","Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
                                                 "Build_inherited_Read_class_from_Data_Read_Standardization_and_db_class": {
                                                             "_comment": " Using data read standardization class and db class, make Read class which inherits from the above two classes",
                                                             "order": 2,
@@ -334,7 +398,7 @@
                                                             "resources": ["Rohit"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
-                                                          },
+                                                },
                                                 "Build_super_class_for_interacting_trans_type_closed": {
                                                             "_comment": " Break resolution architecture needs a class which will be inherited by Closed_Class",
                                                             "order": 2,
@@ -391,11 +455,35 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
+                                                "Get_Tejas_team_consensus_for_existing_client_accuracies_and_asks": {
+                                                            "_comment": " Get Tejas and team to approve new asks and accuracy and get their perspective",
+                                                            "order": 3,
+                                                            "duration": 3,
+                                                            "resources": ["Tejas_and_team","Rani","Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
                                                 "Consolidate_Work_done_till_above": {
                                                             "_comment": " EpowerX team will sit together to consolidate work done till now. Rani will keep track of progress",
                                                             "order": 3,
                                                             "duration": 3,
                                                             "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Get_EpowerX_consensus_for_Tejas_suggestions": {
+                                                            "_comment": " Get Tejas and team to approve new asks and accuracy and get their perspective",
+                                                            "order": 3,
+                                                            "duration": 3,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani","Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Get_overall_consensus_for_existing_client_approval_and_document_finally": {
+                                                            "_comment": " Get Tejas and team to approve new asks and accuracy and get their perspective",
+                                                            "order": 4,
+                                                            "duration": 3,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani","Girish","Hari","Tejas_and_team"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
@@ -487,9 +575,41 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
+                                                "Setup_Calls_with_Business_for_new_perspective_of_Existing_clients":  {
+                                                            "_comment": " Take time from business leaders/workers about any new changes they want, what kind of accuracy they are okay with for final delivery",
+                                                            "order": 8,
+                                                            "duration": 4,
+                                                            "resources": ["Rani","Hari","Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_inherited_Model_Class":  {
+                                                            "_comment": " Using Data_Read_Class, Model_Architecture_Class, Break_Resolution_Logic_Class and Comment_Resolution_Logic_Class, make Model_Class which inherits from the above four classes",
+                                                            "order": 9,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Revisit_Business_Perspective_Before_":  {
+                                                            "_comment": " Using Data_Read_Class, Model_Architecture_Class, Break_Resolution_Logic_Class and Comment_Resolution_Logic_Class, make Model_Class which inherits from the above four classes",
+                                                            "order": 9,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Asynchronous_Message_RabbitMQ_Class":  {
+                                                            "_comment": " Using Data_Read_Class, Model_Architecture_Class, Break_Resolution_Logic_Class and Comment_Resolution_Logic_Class, make Model_Class which inherits from the above four classes",
+                                                            "order": 9,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
                                                 "Milestone_plus_documentation_2":  {
                                                             "_comment": "- Meet to check on progress, \n Document progress",
-                                                            "order": 8,
+                                                            "order": 10,
                                                             "duration": 4,
                                                             "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
                                                             "state": "TBD",
@@ -498,6 +618,14 @@
 
                                                }
 
+                                      },
+              "new_code_integration":     {
+                                      "_comment_color": "Red",
+                                      "color": "#FF0000",
+                                      "order": 3,
+                                      "tasks": {
+
+                                               }
                                       }
 
       }
