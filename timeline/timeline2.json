@@ -35,67 +35,51 @@
                                                             "state": "TBD",
                                                             "time_continued": "False, take from ML2_Phase2_start_date"
                                                           },
+                                                "Version_control_access_plus_creation_of_package_repo": {
+                                                            "_comment": " Which version control can we use. Is it possible to use Git or do we only have the option for TFS. TFS does not always support all functionalities we want ",
+                                                            "order": 1,
+                                                            "duration": 5,
+                                                            "resources": ["Rohit","Ritesh","Rani","IT"],
+                                                            "state": "TBD",
+                                                            "time_continued": "False, take from ML2_Phase2_start_date"
+                                                          },
+                                                "Project_management": {
+                                                            "_comment": " Choose a project management tool to be used (Jira/Trello).\n Get access to all members to track progress.",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rohit","Rani","IT","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
                                                 "Firewall_access_for_package_installations":  {
                                                             "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Decide_on_Cloud_infrastructure":  {
+                                                            "_comment": "- Requirement gathering \n- Check if we can get AWS credits or convince IT to give us Azure Virtual Machine access",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit","Hari"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Which_IDE_to_use":  {
+                                                            "_comment": "- Requirement gathering \n- Choose from options between Pycharm/Atom/Spyder for data engineering and Jupyter/Pycharm for data modelling. \n Make sure that data scientists can and should push changes to version control software",
                                                             "order": 2,
                                                             "duration": 3,
                                                             "resources": ["Rani", "IT", "Rohit","Pratik","Abhijeet"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
-                                                "test_task_order_2":  {
-                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                "Which_IDE_to_use":  {
+                                                            "_comment": "- Requirement gathering \n- Choose from options between Pycharm/Atom/Spyder for data engineering and Jupyter/Pycharm for data modelling. \n Make sure that data scientists can and should push changes to version control software",
                                                             "order": 2,
-                                                            "duration": 5,
-                                                            "resources": ["Rani", "IT", "Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
-                                                          },
-                                                "test_task_order_2_second":  {
-                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
-                                                            "order": 2,
-                                                            "duration": 2,
-                                                            "resources": ["Rani", "IT", "Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
-                                                          },
-                                                "test_task_order_2_third":  {
-                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
-                                                            "order": 2,
-                                                            "duration": 2,
-                                                            "resources": ["Rani", "IT", "Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
-                                                          },
-                                                "test_task_order_3":  {
-                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
-                                                            "order": 3,
                                                             "duration": 3,
-                                                            "resources": ["Rani", "IT", "Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
-                                                          },
-                                                "test_task_order_3_second":  {
-                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
-                                                            "order": 3,
-                                                            "duration": 5,
-                                                            "resources": ["Rani", "IT", "Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
-                                                          },
-                                                "test_task_order_4":  {
-                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
-                                                            "order": 4,
-                                                            "duration": 3,
-                                                            "resources": ["Rani", "IT", "Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
-                                                          },
-                                                "test_task_order_4_second":  {
-                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
-                                                            "order": 4,
-                                                            "duration": 3,
-                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "resources": ["Rani", "IT", "Rohit","Pratik","Abhijeet"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           }
@@ -109,47 +93,70 @@
                                       "color": "#00FF00",
                                       "order": 2,
                                       "tasks": {
-                                                "test_task_order_1": {
-                                                            "_comment": "- Requirement gathering \n- Install Jenkins \n- Get Jenkins Docker to operate on assigned port",
+                                                "Research_design_pattern_most_suitable_for_pythonic_classes": {
+                                                            "_comment": "- Read references on Design pattern like 'Dive Into DESIGN PATTERNS' by Alexander Schvets. \n Conclude on which design pattern to use \n",
                                                             "order": 1,
-                                                            "duration": 3,
-                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                           },
-                                                "Jenkins": {
-                                                            "_comment": "- Requirement gathering \n- Install Jenkins \n- Get Jenkins Docker to operate on assigned port",
+                                                "Decide_on_virtualenv_or_conda_to_use_as_package_or_environment_manager": {
+                                                            "_comment": "- Decide which python package/environment manager to use. Conda is lighter (122Mb) compared to virtualenv(12Mb), but more powerful",
                                                             "order": 1,
-                                                            "duration": 3,
-                                                            "resources": ["Rani", "IT", "Rohit","Ritesh"],
+                                                            "duration": 1,
+                                                            "resources": ["Rohit""],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                           },
-                                                "Docker":  {
-                                                            "_comment": "- Requirement gathering \n- Install Docker \n- Add all users to use Docker added to docker users group on windows machine",
+                                                "Python_Wheels": {
+                                                            "_comment": "-Research Python wheels for efficient package installation for packages we will develop",
                                                             "order": 1,
-                                                            "duration": 7,
-                                                            "resources": ["Rani"],
+                                                            "duration": 2,
+                                                            "resources": ["Rohit"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                           },
-                                                "Super_User_Creation":  {
-                                                            "_comment": "- Requirement gathering \n- Make super user for Phase 2",
+                                                "Revamp_Architecture_for_break_resolution": {
+                                                            "_comment": " Look into changes to be made to break resolution architecure and how it can be made faster and more memory efficient",
                                                             "order": 1,
-                                                            "duration": 3,
-                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "duration": 4,
+                                                            "resources": ["Pratik"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                           },
-                                                "test_task_order_2":  {
-                                                            "_comment": "- Requirement gathering \n- Install Docker \n- Add all users to use Docker added to docker users group on windows machine",
+                                                "Revamp_Architecture_for_comment_resolution": {
+                                                            "_comment": " Look into changes to be made to comment resolution architecture and how it can be made faster and more memory efficient",
+                                                            "order": 1,
+                                                            "duration": 4,
+                                                            "resources": ["Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Break_resolution_architecture_design": {
+                                                            "_comment": " Share insights from break resolution architecure with team and come to a design concensus",
+                                                            "order": 2,
+                                                            "duration": 2,
+                                                            "resources": ["Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Comment_resolution_architecture_design": {
+                                                            "_comment": " Share insights from comment resolution architecure with team and come to a design concensus",
                                                             "order": 2,
                                                             "duration": 3,
-                                                            "resources": ["Rani"],
+                                                            "resources": ["Rohit","Pratik","Abhijeet"],
                                                             "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
-                                                  }
-
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Build_class_for_reading_data": {
+                                                            "_comment": " ",
+                                                            "order": 3,
+                                                            "duration": 3,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          }
                                                }
                                       },
               "code_refactoring":     {

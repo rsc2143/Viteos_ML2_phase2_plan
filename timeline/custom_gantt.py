@@ -349,6 +349,8 @@ class CustomGantt(ReadTimelineJson):
         self.all_projects_start_date = self.return_datetime_value_for_str_date(self.new_timeline_dict_from_super["ML2_Phase2_start_date"])
         self.all_projects_today_date = date.today()
 
+        self.all_projects_end_date = self.all_projects_end_date + timedelta(days=10)
+
         self.all_projects_end_date_year, self.all_projects_end_date_month, self.all_projects_end_date_day, = self.all_projects_end_date.year, self.all_projects_end_date.month, self.all_projects_end_date.day
         self.all_projects_start_date_year, self.all_projects_start_date_month, self.all_projects_start_date_day, = self.all_projects_start_date.year, self.all_projects_start_date.month, self.all_projects_start_date.day
         self.all_projects_today_date_year, self.all_projects_today_date_month, self.all_projects_today_date_day, = self.all_projects_today_date.year, self.all_projects_today_date.month, self.all_projects_today_date.day
@@ -445,7 +447,7 @@ class CustomGantt(ReadTimelineJson):
 if __name__ == '__main__':
     from custom_gantt import ReadTimelineJson, CustomGantt
     import pprint
-    custom_gantt_obj = CustomGantt('timeline.json', 'custom_gantt_task.py', 'all_projects_timeline')
+    custom_gantt_obj = CustomGantt('timeline_final.json', 'custom_gantt_task_final.py', 'all_projects_timeline_final')
     import_statement_list = ["import gantt","from datetime import date"]
     py_file_to_execute_name = 'custom_gantt_py_file.py'
     custom_gantt_obj.write_string_text_for_import_statements(import_statement_list)

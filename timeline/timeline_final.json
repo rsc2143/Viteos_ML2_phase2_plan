@@ -1,0 +1,386 @@
+{
+  "_comment": "Below is the json file which will help create a Gantt chart for Phase 2 of ML Recon.",
+  "_developer": "Rohit Singh Chauhan",
+  "_all_date_formats": "dd-mm-yyyy",
+  "_created_date": "08-09-2021",
+  "ML2_Phase2_start_date": "13-09-2021",
+
+  "projects": {
+              "permission_access":    {
+                                      "_comment_color": "Yellow",
+                                      "color": "#FFFF00",
+                                      "order": 1,
+                                      "tasks": {
+                                                "Jenkins": {
+                                                            "_comment": "- Requirement gathering \n- Install Jenkins \n- Get Jenkins Docker to operate on assigned port",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "False, take from ML2_Phase2_start_date"
+                                                          },
+                                                "Docker":  {
+                                                            "_comment": "- Requirement gathering \n- Install Docker \n- Add all users to use Docker added to docker users group on windows machine",
+                                                            "order": 1,
+                                                            "duration": 7,
+                                                            "resources": ["Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "False, take from ML2_Phase2_start_date"
+                                                          },
+                                                "Super_User_Creation":  {
+                                                            "_comment": "- Requirement gathering \n- Make super user for Phase 2",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "False, take from ML2_Phase2_start_date"
+                                                          },
+                                                "Version_control_access_plus_creation_of_package_repo": {
+                                                            "_comment": " Which version control can we use. Is it possible to use Git or do we only have the option for TFS. TFS does not always support all functionalities we want ",
+                                                            "order": 1,
+                                                            "duration": 5,
+                                                            "resources": ["Rohit","Ritesh","Rani","IT"],
+                                                            "state": "TBD",
+                                                            "time_continued": "False, take from ML2_Phase2_start_date"
+                                                          },
+                                                "Project_management": {
+                                                            "_comment": " Choose a project management tool to be used (Jira/Trello).\n Get access to all members to track progress.",
+                                                            "order": 1,
+                                                            "duration": 3,
+                                                            "resources": ["Rohit","Rani","IT","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "False, take from ML2_Phase2_start_date"
+                                                          },
+                                                "Firewall_access_for_package_installations":  {
+                                                            "_comment": "- Requirement gathering \n- Make sure super user can use docker hub and install docker packages inside containers",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Decide_on_Cloud_infrastructure":  {
+                                                            "_comment": "- Requirement gathering \n- Check if we can get AWS credits or convince IT to give us Azure Virtual Machine access",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit","Hari"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Which_IDE_to_use":  {
+                                                            "_comment": "- Requirement gathering \n- Choose from options between Pycharm/Atom/Spyder for data engineering and Jupyter/Pycharm for data modelling. \n Make sure that data scientists can and should push changes to version control software",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Which_IDE_to_use":  {
+                                                            "_comment": "- Requirement gathering \n- Choose from options between Pycharm/Atom/Spyder for data engineering and Jupyter/Pycharm for data modelling. \n Make sure that data scientists can and should push changes to version control software",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "IT", "Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Complete unfinished work":  {
+                                                            "_comment": "- Complete unfinised work upto this deadline",
+                                                            "order": 3,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet","Hari"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Milestone_plus_documentation":  {
+                                                            "_comment": "- Meet to check on progress, \n Document progress",
+                                                            "order": 4,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet","Hari"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Decide project stakeholders":  {
+                                                            "_comment": "- Decide project stakeholders",
+                                                            "order": 4,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet","Hari"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Decide change management policy":  {
+                                                            "_comment": "- Decide change management policy and renumeration",
+                                                            "order": 4,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet","Hari"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          }
+
+
+
+
+                                              }
+
+                                      },
+              "code_design":          {
+                                      "_comment_color": "Lime or light green",
+                                      "color": "#00FF00",
+                                      "order": 2,
+                                      "tasks": {
+                                                "Research_design_pattern_most_suitable_for_pythonic_classes": {
+                                                            "_comment": "- Read references on Design pattern like 'Dive Into DESIGN PATTERNS' by Alexander Schvets. \n Conclude on which design pattern to use \n",
+                                                            "order": 1,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Decide_on_virtualenv_or_conda_to_use_as_package_or_environment_manager": {
+                                                            "_comment": "- Decide which python package/environment manager to use. Conda is lighter (122Mb) compared to virtualenv(12Mb), but more powerful",
+                                                            "order": 1,
+                                                            "duration": 1,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Python_Wheels": {
+                                                            "_comment": "-Research Python wheels for efficient package installation for packages we will develop",
+                                                            "order": 1,
+                                                            "duration": 2,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Revamp_Architecture_for_break_resolution": {
+                                                            "_comment": " Look into changes to be made to break resolution architecure and how it can be made faster and more memory efficient",
+                                                            "order": 1,
+                                                            "duration": 4,
+                                                            "resources": ["Pratik"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Revamp_Architecture_for_comment_resolution": {
+                                                            "_comment": " Look into changes to be made to comment resolution architecture and how it can be made faster and more memory efficient",
+                                                            "order": 1,
+                                                            "duration": 4,
+                                                            "resources": ["Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                          },
+                                                "Break_resolution_architecture_design": {
+                                                            "_comment": " Share insights from break resolution architecure with team and come to a design concensus",
+                                                            "order": 2,
+                                                            "duration": 2,
+                                                            "resources": ["Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Comment_resolution_architecture_design": {
+                                                            "_comment": " Share insights from comment resolution architecure with team and come to a design concensus",
+                                                            "order": 2,
+                                                            "duration": 3,
+                                                            "resources": ["Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Complete unfinished work":  {
+                                                            "_comment": "- Complete unfinised work upto this deadline",
+                                                            "order": 3,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Milestone_plus_documentation":  {
+                                                            "_comment": "- Requirement gathering \n- Choose from options between Pycharm/Atom/Spyder for data engineering and Jupyter/Pycharm for data modelling. \n Make sure that data scientists can and should push changes to version control software",
+                                                            "order": 4,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          }
+
+                                               }
+                                      },
+              "code_refactoring_plus_testing":     {
+                                      "_comment_color": "Red",
+                                      "color": "#FF0000",
+                                      "order": 3,
+                                      "tasks": {
+                                                "Build_super_class_for_Data_Read_Standardization": {
+                                                  "_comment": " Read class will assign appropriate data type to data read from db",
+                                                  "order": 1,
+                                                  "duration": 4,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
+                                                },
+                                                "Build_super_class_for_db": {
+                                                  "_comment": " db classs will read data from assigned db (mostly mongodb), write better structure to write queries for future",
+                                                  "order": 1,
+                                                  "duration": 4,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
+                                                },
+                                                "Build_super_class_for_closed_architecture": {
+                                                  "_comment": " Comment resolution architecture needs a class which will be inherited by Model_Architecture_Class",
+                                                  "order": 1,
+                                                  "duration": 5,
+                                                  "resources": ["Rohit","Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
+                                                },
+                                                "Build_super_class_for_break_resolution_architecture": {
+                                                  "_comment": " Break resolution architecture needs a class which will be inherited by Model_Architecture_Class",
+                                                  "order": 1,
+                                                  "duration": 7,
+                                                  "resources": ["Rohit","Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
+                                                },
+                                                "Build_super_class_for_comment_resolution_architecture": {
+                                                  "_comment": " Comment resolution architecture needs a class which will be inherited by Model_Architecture_Class",
+                                                  "order": 1,
+                                                  "duration": 7,
+                                                  "resources": ["Rohit","Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
+                                                },
+                                                "Build_inherited_Read_class_from_Data_Read_Standardization_and_db_class": {
+                                                  "_comment": " Using data read standardization class and db class, make Read class which inherits from the above two classes",
+                                                  "order": 2,
+                                                  "duration": 3,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_super_class_for_interacting_trans_type_closed": {
+                                                  "_comment": " Break resolution architecture needs a class which will be inherited by Closed_Class",
+                                                  "order": 2,
+                                                  "duration": 5,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_super_class_for_non_interacting_trans_type_closed": {
+                                                  "_comment": " Comment resolution architecture needs a class which will be inherited by Closed_Class",
+                                                  "order": 2,
+                                                  "duration": 5,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_super_class_for_UMR_OTO_Class": {
+                                                  "_comment": " UMR_OTO logic needs a class which will be inherited by UMR_Class",
+                                                  "order": 2,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_super_class_for_UMR_MTO_OTM_Class": {
+                                                  "_comment": " UMR_MTO_OTM logic needs a class which will be inherited by UMR_Class",
+                                                  "order": 2,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_super_class_for_UMR_MTM_Class": {
+                                                  "_comment": " UMR_MTM logic needs a class which will be inherited by UMR_Class",
+                                                  "order": 2,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_super_class_for_Description_Regex_Class": {
+                                                  "_comment": " Build Regex class for desciption variable which can catch patterns required for desciption",
+                                                  "order": 2,
+                                                  "duration": 3,
+                                                  "resources": ["Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Placeholder_for_other_comment_work": {
+                                                  "_comment": " Placeholder_for_other_comment_work",
+                                                  "order": 2,
+                                                  "duration": 3,
+                                                  "resources": ["Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Consolidate_Work_done_till_above": {
+                                                  "_comment": " EpowerX team will sit together to consolidate work done till now. Rani will keep track of progress",
+                                                  "order": 3,
+                                                  "duration": 3,
+                                                  "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_super_class_for_UMB_OTO_Class": {
+                                                  "_comment": " UMB_OTO logic needs a class which will be inherited by UMB_Class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_super_class_for_UMB_MTO_OTM_Class": {
+                                                  "_comment": " UMB_MTM logic needs a class which will be inherited by UMB_Class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_super_class_for_UMB_MTM_Class": {
+                                                  "_comment": " UMB_MTM logic needs a class which will be inherited by UMB_Class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Write_tests_for_each_class_written_upto_now": {
+                                                  "_comment": " Start work on testing of major functions written in each class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_inherited_Model_Architecture_Class": {
+                                                  "_comment": " Start work on testing of major functions written in each class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_inherited_Comment_Resolution_Logic_Class": {
+                                                  "_comment": " Using Regex_Description_Class and other placeholder classs, make Comment_Resolution_Logic class which inherits from the above classes",
+                                                  "order": 5,
+                                                  "duration": 7,
+                                                  "resources": ["Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Milestone_plus_documentation":  {
+                                                  "_comment": "- Meet to check on progress, \n Document progress",
+                                                  "order": 6,
+                                                  "duration": 3,
+                                                  "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                        }
+
+                                               }
+
+                                      }
+
+
+
+      }
+}
