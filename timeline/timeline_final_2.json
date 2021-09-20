@@ -288,212 +288,212 @@
                                       "order": 3,
                                       "tasks": {
                                                 "Build_super_class_for_Data_Read_Standardization": {
-                                                            "_comment": " Read class will assign appropriate data type to data read from db",
-                                                            "order": 1,
-                                                            "duration": 4,
-                                                            "resources": ["Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest project"
+                                                  "_comment": " Read class will assign appropriate data type to data read from db",
+                                                  "order": 1,
+                                                  "duration": 4,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
                                                 },
                                                 "Build_super_class_for_db": {
-                                                            "_comment": " db classs will read data from assigned db (mostly mongodb), write better structure to write queries for future",
-                                                            "order": 1,
-                                                            "duration": 4,
-                                                            "resources": ["Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest project"
+                                                  "_comment": " db classs will read data from assigned db (mostly mongodb), write better structure to write queries for future",
+                                                  "order": 1,
+                                                  "duration": 4,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
                                                 },
                                                 "Build_super_class_for_closed_architecture": {
-                                                            "_comment": " Comment resolution architecture needs a class which will be inherited by Model_Architecture_Class",
-                                                            "order": 1,
-                                                            "duration": 5,
-                                                            "resources": ["Rohit","Abhijeet"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest project"
+                                                  "_comment": " Comment resolution architecture needs a class which will be inherited by Model_Architecture_Class",
+                                                  "order": 1,
+                                                  "duration": 5,
+                                                  "resources": ["Rohit","Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
                                                 },
                                                 "Build_super_class_for_break_resolution_architecture": {
-                                                            "_comment": " Break resolution architecture needs a class which will be inherited by Model_Architecture_Class",
-                                                            "order": 1,
-                                                            "duration": 7,
-                                                            "resources": ["Rohit","Pratik"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest project"
+                                                  "_comment": " Break resolution architecture needs a class which will be inherited by Model_Architecture_Class",
+                                                  "order": 1,
+                                                  "duration": 7,
+                                                  "resources": ["Rohit","Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
                                                 },
                                                 "Build_super_class_for_comment_resolution_architecture": {
-                                                            "_comment": " Comment resolution architecture needs a class which will be inherited by Model_Architecture_Class",
-                                                            "order": 1,
-                                                            "duration": 7,
-                                                            "resources": ["Rohit","Abhijeet"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest project"
+                                                  "_comment": " Comment resolution architecture needs a class which will be inherited by Model_Architecture_Class",
+                                                  "order": 1,
+                                                  "duration": 7,
+                                                  "resources": ["Rohit","Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest project"
                                                 },
                                                 "Build_inherited_Read_class_from_Data_Read_Standardization_and_db_class": {
-                                                            "_comment": " Using data read standardization class and db class, make Read class which inherits from the above two classes",
-                                                            "order": 2,
-                                                            "duration": 3,
-                                                            "resources": ["Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
-                                                          },
+                                                  "_comment": " Using data read standardization class and db class, make Read class which inherits from the above two classes",
+                                                  "order": 2,
+                                                  "duration": 3,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
+                                                },
                                                 "Build_super_class_for_interacting_trans_type_closed": {
-                                                            "_comment": " Break resolution architecture needs a class which will be inherited by Closed_Class",
-                                                            "order": 2,
-                                                            "duration": 5,
-                                                            "resources": ["Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " Break resolution architecture needs a class which will be inherited by Closed_Class",
+                                                  "order": 2,
+                                                  "duration": 5,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_super_class_for_non_interacting_trans_type_closed": {
-                                                            "_comment": " Comment resolution architecture needs a class which will be inherited by Closed_Class",
-                                                            "order": 2,
-                                                            "duration": 5,
-                                                            "resources": ["Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " Comment resolution architecture needs a class which will be inherited by Closed_Class",
+                                                  "order": 2,
+                                                  "duration": 5,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_super_class_for_UMR_OTO_Class": {
-                                                            "_comment": " UMR_OTO logic needs a class which will be inherited by UMR_Class",
-                                                            "order": 2,
-                                                            "duration": 7,
-                                                            "resources": ["Pratik"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " UMR_OTO logic needs a class which will be inherited by UMR_Class",
+                                                  "order": 2,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_super_class_for_UMR_MTO_OTM_Class": {
-                                                            "_comment": " UMR_MTO_OTM logic needs a class which will be inherited by UMR_Class",
-                                                            "order": 2,
-                                                            "duration": 7,
-                                                            "resources": ["Pratik"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " UMR_MTO_OTM logic needs a class which will be inherited by UMR_Class",
+                                                  "order": 2,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_super_class_for_UMR_MTM_Class": {
-                                                            "_comment": " UMR_MTM logic needs a class which will be inherited by UMR_Class",
-                                                            "order": 2,
-                                                            "duration": 7,
-                                                            "resources": ["Pratik"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " UMR_MTM logic needs a class which will be inherited by UMR_Class",
+                                                  "order": 2,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_super_class_for_Description_Regex_Class": {
-                                                            "_comment": " Build Regex class for desciption variable which can catch patterns required for desciption",
-                                                            "order": 2,
-                                                            "duration": 3,
-                                                            "resources": ["Abhijeet"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " Build Regex class for desciption variable which can catch patterns required for desciption",
+                                                  "order": 2,
+                                                  "duration": 3,
+                                                  "resources": ["Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Placeholder_for_other_comment_work": {
-                                                            "_comment": " Placeholder_for_other_comment_work",
-                                                            "order": 2,
-                                                            "duration": 3,
-                                                            "resources": ["Abhijeet"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " Placeholder_for_other_comment_work",
+                                                  "order": 2,
+                                                  "duration": 3,
+                                                  "resources": ["Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Consolidate_Work_done_till_above": {
-                                                            "_comment": " EpowerX team will sit together to consolidate work done till now. Rani will keep track of progress",
-                                                            "order": 3,
-                                                            "duration": 3,
-                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " EpowerX team will sit together to consolidate work done till now. Rani will keep track of progress",
+                                                  "order": 3,
+                                                  "duration": 3,
+                                                  "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_super_class_for_UMB_OTO_Class": {
-                                                            "_comment": " UMB_OTO logic needs a class which will be inherited by UMB_Class",
-                                                            "order": 4,
-                                                            "duration": 7,
-                                                            "resources": ["Pratik"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " UMB_OTO logic needs a class which will be inherited by UMB_Class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_super_class_for_UMB_MTO_OTM_Class": {
-                                                            "_comment": " UMB_MTM logic needs a class which will be inherited by UMB_Class",
-                                                            "order": 4,
-                                                            "duration": 7,
-                                                            "resources": ["Pratik"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " UMB_MTM logic needs a class which will be inherited by UMB_Class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_super_class_for_UMB_MTM_Class": {
-                                                            "_comment": " UMB_MTM logic needs a class which will be inherited by UMB_Class",
-                                                            "order": 4,
-                                                            "duration": 7,
-                                                            "resources": ["Pratik"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " UMB_MTM logic needs a class which will be inherited by UMB_Class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Pratik"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Write_tests_for_each_class_written_upto_now": {
-                                                            "_comment": " Start work on testing of major functions written in each class",
-                                                            "order": 4,
-                                                            "duration": 7,
-                                                            "resources": ["Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " Start work on testing of major functions written in each class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_inherited_Model_Architecture_Class": {
-                                                            "_comment": " Start work on testing of major functions written in each class",
-                                                            "order": 4,
-                                                            "duration": 7,
-                                                            "resources": ["Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " Start work on testing of major functions written in each class",
+                                                  "order": 4,
+                                                  "duration": 7,
+                                                  "resources": ["Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_inherited_Comment_Resolution_Logic_Class": {
-                                                            "_comment": " Using Regex_Description_Class and other placeholder classs, make Comment_Resolution_Logic class which inherits from the above classes",
-                                                            "order": 5,
-                                                            "duration": 7,
-                                                            "resources": ["Abhijeet","Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " Using Regex_Description_Class and other placeholder classs, make Comment_Resolution_Logic class which inherits from the above classes",
+                                                  "order": 5,
+                                                  "duration": 7,
+                                                  "resources": ["Abhijeet","Rohit"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Milestone_plus_documentation":  {
-                                                            "_comment": "- Meet to check on progress, \n Document progress",
-                                                            "order": 6,
-                                                            "duration": 3,
-                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": "- Meet to check on progress, \n Document progress",
+                                                  "order": 6,
+                                                  "duration": 3,
+                                                  "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Build_inherited_Break_Resolution_Logic_Class":  {
-                                                            "_comment": "- Using Closed_Class,UMR_Class and UMB_Class, make Break_Resolution_Logic_Class which inherits from the above three classes",
-                                                            "order": 7,
-                                                            "duration": 3,
-                                                            "resources": ["Rohit","Pratik","Abhijeet"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": "- Using Closed_Class,UMR_Class and UMB_Class, make Break_Resolution_Logic_Class which inherits from the above three classes",
+                                                  "order": 7,
+                                                  "duration": 3,
+                                                  "resources": ["Rohit","Pratik","Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Decide_best_Python_API_tool":  {
-                                                            "_comment": "From the many API tools available in Python like Flask, FastAPI, Bottle etc, we have to decide which API works best for us",
-                                                            "order": 7,
-                                                            "duration": 3,
-                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": "From the many API tools available in Python like Flask, FastAPI, Bottle etc, we have to decide which API works best for us",
+                                                  "order": 7,
+                                                  "duration": 3,
+                                                  "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Write_tests_for_each_class_written_upto_now_2":  {
-                                                            "_comment": " Start work on testing of major functions written in each class",
-                                                            "order": 7,
-                                                            "duration": 3,
-                                                            "resources": ["Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " Start work on testing of major functions written in each class",
+                                                  "order": 7,
+                                                  "duration": 3,
+                                                  "resources": ["Rohit",],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Complete_unfinished_work":  {
-                                                            "_comment": " Complete any and all unfinised work",
-                                                            "order": 8,
-                                                            "duration": 4,
-                                                            "resources": ["Rohit"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": " Complete any and all unfinised work",
+                                                  "order": 8,
+                                                  "duration": 4,
+                                                  "resources": ["Rohit",],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Milestone_plus_documentation_2":  {
-                                                            "_comment": "- Meet to check on progress, \n Document progress",
-                                                            "order": 8,
-                                                            "duration": 4,
-                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
-                                                            "state": "TBD",
-                                                            "time_continued": "True, take from lastest task in previous order"
+                                                  "_comment": "- Meet to check on progress, \n Document progress",
+                                                  "order": 8,
+                                                  "duration": 4,
+                                                  "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                  "state": "TBD",
+                                                  "time_continued": "True, take from lastest task in previous order"
                                                 }
 
                                                }
