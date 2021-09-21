@@ -6,7 +6,7 @@
   "ML2_Phase2_start_date": "20-09-2021",
 
   "projects": {
-              "permission_access":    {
+              "Planning":    {
                                       "_comment_color": "Yellow",
                                       "color": "#FFFF00",
                                       "order": 1,
@@ -118,7 +118,7 @@
                                                 "Complete_unfinished_work":  {
                                                             "_comment": "- Complete unfinised work upto this deadline",
                                                             "order": 3,
-                                                            "duration": 3,
+                                                            "duration": 5,
                                                             "resources": ["Rani", "Rohit","Pratik","Abhijeet","Hari"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
@@ -179,8 +179,8 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
-                                                "Approve_new_clients":  {
-                                                            "_comment": "Once EpowerX team has ratified the data with or without changes, clients will be decided along with setups to be delivered",
+                                                "New_clients_approval":  {
+                                                            "_comment": "Once EpowerX team has ratified the data with or without changes, new clients will be decided along with setups to be delivered",
                                                             "order": 4,
                                                             "duration": 3,
                                                             "resources": ["Rani", "Rohit","Pratik","Abhijeet","Hari","Girish"],
@@ -194,6 +194,22 @@
                                                             "resources": ["Rani","Hari","Girish"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Evaluate_and_add_new_tasks_if_any":  {
+                                                            "_comment": " Change gantt chart for any new tasks to be added and revisit timelines. Add or substract days into it",
+                                                            "order": 5,
+                                                            "duration": 4,
+                                                            "resources": ["Rani","Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Research_version_control_best_practices":  {
+                                                            "_comment": " For which ever version control we end up using, make sure everyone is well researched with best practices. If TFS, then we all have to learn best practices for version controlling with TFS (how to make branches, versions, use CLI etc)",
+                                                            "order": 5,
+                                                            "duration": 4,
+                                                            "resources": ["Rani","Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
                                                           }
 
 
@@ -202,7 +218,7 @@
                                               }
 
                                       },
-              "code_design":          {
+              "CodeDesign":          {
                                       "_comment_color": "Lime or light green",
                                       "color": "#00FF00",
                                       "order": 2,
@@ -215,8 +231,8 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                           },
-                                                "Decide_business_POCs_for_new_clients":  {
-                                                            "_comment": "Once clients have been decided, make a list of POCs EpowerX team will get in touch with.",
+                                                "New_clients_Decide_business_POCs":  {
+                                                            "_comment": "Once new clients have been decided, make a list of POCs EpowerX team will get in touch with.",
                                                             "order": 1,
                                                             "duration": 3,
                                                             "resources": ["Rani", "Girish"],
@@ -279,8 +295,8 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                           },
-                                                "Get_Business_POCs_time_of_availability_and_bandwidth":  {
-                                                            "_comment": "Once EpowerX team has ratified the data with or without changes, clients will be decided along with setups to be delivered",
+                                                "Get_New_client_Business_POCs_time_of_availability_and_bandwidth":  {
+                                                            "_comment": "Once EpowerX team has ratified the data with or without changes, new clients will be decided along with setups to be delivered",
                                                             "order": 1,
                                                             "duration": 3,
                                                             "resources": ["Rani", "Girish"],
@@ -295,8 +311,8 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
-                                                "Prepare_task_document_with_business_leaders_for_existing_client_for_any_new_ask": {
-                                                            "_comment": " From exisiting discussions with business leaders, prepare a document for new accuracy required for sign off and any other ask",
+                                                "Existing_clients_Prepare_task_document_with_business_leaders_for_any_new_ask": {
+                                                            "_comment": " For Existing clients, hold discussions with business leaders, prepare a document for new accuracy required for sign off and any other ask",
                                                             "order": 2,
                                                             "duration": 3,
                                                             "resources": ["Rani","Girish","Hari"],
@@ -314,14 +330,86 @@
                                                 "Complete_unfinished_work":  {
                                                             "_comment": "- Complete unfinised work upto this deadline",
                                                             "order": 3,
-                                                            "duration": 3,
+                                                            "duration": 5,
                                                             "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Check_and_merge_all_code_into_version_control_1":  {
+                                                            "_comment": "Check all code written upto now into version control of choice. Merge different resource works into one single location",
+                                                            "order": 3,
+                                                            "duration": 5,
+                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Configure_logging_module_database":  {
+                                                            "_comment": " Before writing logging module, configure the logging module database and structure the columns etc in a more consumable format by code written in API showing logs. Tejas_and_team will give the database location",
+                                                            "order": 4,
+                                                            "duration": 2,
+                                                            "resources": ["Rohit","Tejas_and_team"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Build_logging_module":  {
+                                                            "_comment": " Build loggin module, preferably a decorator which can be placed before functions so their logs are directed to the right directory/database",
+                                                            "order": 4,
+                                                            "duration": 6,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_Discuss_first_level_of_break_resolution_procedure_for_new_client_1_and_2_all_setups":  {
+                                                            "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their break resolution. Rani to setup meetings",
+                                                            "order": 4,
+                                                            "duration": 6,
+                                                            "resources": ["Pratik","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_Discuss_first_level_of_comment_resolution_procedure_for_new_client_1_and_2_all_setups":  {
+                                                            "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their comment resolution. Rani to setup meetings",
+                                                            "order": 4,
+                                                            "duration": 6,
+                                                            "resources": ["Abhijeet","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Research_integration_of_logging_module_look_and_usage_in_proposed_API":  {
+                                                            "_comment": " Build loggin module, preferably a decorator which can be placed before functions so their logs are directed to the right directory/database",
+                                                            "order": 5,
+                                                            "duration": 6,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_write_rough_code_for_break_resolution_procedure_for_new_client_1_and_2_all_setups":  {
+                                                            "_comment": " Write rough unstructured code for break resolution of clients 1 and 2 and check what accuracy percentage we are getting. ",
+                                                            "order": 5,
+                                                            "duration": 6,
+                                                            "resources": ["Pratik","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_write_rough_code_for_comment_resolution_procedure_for_new_client_1_and_2_all_setups":  {
+                                                            "_comment": " Write rough unstructured code for comment resolution of clients 1 and 2 and check what accuracy percentage we are getting. ",
+                                                            "order": 5,
+                                                            "duration": 6,
+                                                            "resources": ["Abhijeet","Rani"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
                                                 "Milestone_plus_documentation":  {
                                                             "_comment": "- Requirement gathering \n- Choose from options between Pycharm/Atom/Spyder for data engineering and Jupyter/Pycharm for data modelling. \n Make sure that data scientists can and should push changes to version control software",
-                                                            "order": 4,
+                                                            "order": 6,
+                                                            "duration": 3,
+                                                            "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "Check_and_merge_all_code_into_version_control_2":  {
+                                                            "_comment": "Check all code written upto now into version control of choice. Merge different resource works into one single location",
+                                                            "order": 6,
                                                             "duration": 3,
                                                             "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
                                                             "state": "TBD",
@@ -330,13 +418,13 @@
 
                                                }
                                       },
-              "code_refactoring_plus_testing":     {
-                                      "_comment_color": "Red",
-                                      "color": "#FF0000",
+              "CodeRefactoringTesting":     {
+                                      "_comment_color": "LightSalmon",
+                                      "color": "#FFA07A",
                                       "order": 3,
                                       "tasks": {
-                                                "Get_approval_from_EpowerX_team_for_new_accuracy_plus_new_ask": {
-                                                            "_comment": " Read class will assign appropriate data type to data read from db",
+                                                "Existing_clients_Get_approval_from_EpowerX_team_for_new_accuracy_plus_new_ask": {
+                                                            "_comment": " For existing clients, the new accuracies and new asks decided by business will be approved by EpowerX team. If EpowerX team feels that any ask or accuracy is too much and cant be achieved, they will notify Viteos and ask to make changes to expectations",
                                                             "order": 1,
                                                             "duration": 4,
                                                             "resources": ["Rohit","Pratik","Abhijeet","Rani","Hari","Girish"],
@@ -383,8 +471,8 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                 },
-                                                "Revert_with_business_about_EpowerX_comments": {
-                                                            "_comment": " Get into consensus with EpowerX and business leaders about new accuracy projections and new asks",
+                                                "Existing_clients_Revert_with_business_about_EpowerX_comments": {
+                                                            "_comment": " For existing clients, Get into consensus with EpowerX and business leaders about new accuracy projections and new asks. If required, EpowerX team can also talk to business and explain their perspective as to how and why expectations are too much, if they are that is.",
                                                             "order": 2,
                                                             "duration": 3,
                                                             "resources": ["Hari","Rani","Girish"],
@@ -455,8 +543,8 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
-                                                "Get_Tejas_team_consensus_for_existing_client_accuracies_and_asks": {
-                                                            "_comment": " Get Tejas and team to approve new asks and accuracy and get their perspective",
+                                                "Existing_clients_Get_Tejas_team_consensus_for_existing_client_accuracies_and_asks": {
+                                                            "_comment": " For existing clients, Get Tejas and team to approve new asks and accuracy and get their perspective. In this meeting, Tejas and team will access how much extra work they need to do for any new ask for productionization purposes, and they need to plan their workload/engagement with ML2_Phase accordingly.",
                                                             "order": 3,
                                                             "duration": 3,
                                                             "resources": ["Tejas_and_team","Rani","Girish"],
@@ -479,8 +567,24 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
+                                                "New_clients_Discuss_first_level_of_break_resolution_procedure_for_new_client_3_and_4_all_setups":  {
+                                                            "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their break resolution. Rani to setup meetings",
+                                                            "order": 3,
+                                                            "duration": 6,
+                                                            "resources": ["Pratik","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_Discuss_first_level_of_comment_resolution_procedure_for_new_client_3_and_4_all_setups":  {
+                                                            "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their comment resolution. Rani to setup meetings",
+                                                            "order": 3,
+                                                            "duration": 6,
+                                                            "resources": ["Abhijeet","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
                                                 "Get_overall_consensus_for_existing_client_approval_and_document_finally": {
-                                                            "_comment": " Get Tejas and team to approve new asks and accuracy and get their perspective",
+                                                            "_comment": " Get everone in the resources listed to approve new asks and accuracy and get their perspective. Once approved, these asks should be almost set in stone with no going back and forth. Also, this will be documented permanently and shared with everyone",
                                                             "order": 4,
                                                             "duration": 3,
                                                             "resources": ["Rohit","Pratik","Abhijeet","Rani","Girish","Hari","Tejas_and_team"],
@@ -535,11 +639,59 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
+                                                "New_clients_write_rough_code_for_break_resolution_procedure_for_new_client_3_and_4_all_setups":  {
+                                                            "_comment": " Write rough unstructured code for break resolution of clients 3 and 4 and check what accuracy percentage we are getting. ",
+                                                            "order": 5,
+                                                            "duration": 7,
+                                                            "resources": ["Pratik","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_write_rough_code_for_comment_resolution_procedure_for_new_client_3_and_4_all_setups":  {
+                                                            "_comment": " Write rough unstructured code for comment resolution of clients 3 and 4 and check what accuracy percentage we are getting. ",
+                                                            "order": 6,
+                                                            "duration": 7,
+                                                            "resources": ["Abhijeet","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
                                                 "Milestone_plus_documentation":  {
                                                             "_comment": "- Meet to check on progress, \n Document progress",
                                                             "order": 6,
                                                             "duration": 3,
                                                             "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "New_clients_Discuss_first_level_of_break_resolution_procedure_for_new_client_5_and_6_all_setups":  {
+                                                            "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their break resolution. Rani to setup meetings",
+                                                            "order": 6.2,
+                                                            "duration": 6,
+                                                            "resources": ["Pratik","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_Discuss_first_level_of_comment_resolution_procedure_for_new_client_5_and_6_all_setups":  {
+                                                            "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their comment resolution. Rani to setup meetings",
+                                                            "order": 6.2,
+                                                            "duration": 6,
+                                                            "resources": ["Abhijeet","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "New_clients_write_rough_code_for_break_resolution_procedure_for_new_client_5_and_6_all_setups":  {
+                                                            "_comment": " Write rough unstructured code for break resolution of clients 5 and 6 and check what accuracy percentage we are getting. ",
+                                                            "order": 6.3,
+                                                            "duration": 7,
+                                                            "resources": ["Pratik","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_write_rough_code_for_comment_resolution_procedure_for_new_client_5_and_6_all_setups":  {
+                                                            "_comment": " Write rough unstructured code for comment resolution of clients 5 and 6 and check what accuracy percentage we are getting. ",
+                                                            "order": 6.3,
+                                                            "duration": 7,
+                                                            "resources": ["Abhijeet","Rani"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
@@ -562,7 +714,7 @@
                                                 "Write_tests_for_each_class_written_upto_now_2":  {
                                                             "_comment": " Start work on testing of major functions written in each class",
                                                             "order": 7,
-                                                            "duration": 3,
+                                                            "duration": 7,
                                                             "resources": ["Rohit"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
@@ -570,13 +722,13 @@
                                                 "Complete_unfinished_work":  {
                                                             "_comment": " Complete any and all unfinised work",
                                                             "order": 8,
-                                                            "duration": 4,
+                                                            "duration": 5,
                                                             "resources": ["Rohit"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
-                                                "Setup_Calls_with_Business_for_new_perspective_of_Existing_clients":  {
-                                                            "_comment": " Take time from business leaders/workers about any new changes they want, what kind of accuracy they are okay with for final delivery",
+                                                "Existing_clients_Setup_Calls_with_Business_POCs_to_understand_how_accuracies_and_asks_can_be_coded_in":  {
+                                                            "_comment": " Data Scientist need to communicate with ",
                                                             "order": 8,
                                                             "duration": 4,
                                                             "resources": ["Rani","Hari","Girish"],
@@ -591,16 +743,16 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
-                                                "Revisit_Business_Perspective_Before_":  {
-                                                            "_comment": " Using Data_Read_Class, Model_Architecture_Class, Break_Resolution_Logic_Class and Comment_Resolution_Logic_Class, make Model_Class which inherits from the above four classes",
+                                                "Existing_clients_Data_scientist_hold_talks_with_business_POCs_to_understand_new_ask_and_accuracy_improvement":  {
+                                                            "_comment": " For Existing clients, data scientists will hold calls with business POCs to understand how model can be enhanced for improvement in accuracy and new ask.",
                                                             "order": 9,
-                                                            "duration": 4,
-                                                            "resources": ["Rohit"],
+                                                            "duration": 10,
+                                                            "resources": ["Pratik","Abhijeet"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                 },
                                                 "Asynchronous_Message_RabbitMQ_Class":  {
-                                                            "_comment": " Using Data_Read_Class, Model_Architecture_Class, Break_Resolution_Logic_Class and Comment_Resolution_Logic_Class, make Model_Class which inherits from the above four classes",
+                                                            "_comment": " 1. Research and 2. Undersand the need for Asynchronous_Message_RabbitMQ_Class and build it for constant message delivery from ML engine to machine engine or UI and vice versa. No message should be lost and all messages should be acknowledged. In Python, asynchronous messaging is done using SelectConnection in pika library ",
                                                             "order": 9,
                                                             "duration": 4,
                                                             "resources": ["Rohit"],
@@ -614,17 +766,174 @@
                                                             "resources": ["Rani", "Rohit","Pratik","Abhijeet"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Synchronous_Message_RabbitMQ_Class":  {
+                                                            "_comment": "1. Research and 2. Undersand Synchronous messaging in RabbitMQ. Check synchronous BlockingConnection function in pika and test its use case. Build a class around it",
+                                                            "order": 10,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Existing_clients_Prepare_roadmap_for_new_code_changes":  {
+                                                            "_comment": "Discuss internally and come to a decision about 1. how to change any existing code base and 2. how to write new code changes",
+                                                            "order": 10,
+                                                            "duration": 4,
+                                                            "resources": ["Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Existing_client_Code_changes_part_1":  {
+                                                            "_comment": "Allocate time to write new code or make changes to existing code. Any meeting with clients will also be accomodated into this time for back and forth discussions",
+                                                            "order": 10,
+                                                            "duration": 5,
+                                                            "resources": ["Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Gather_data_type_requirement_for_writing_data_from_ml_into_db":  {
+                                                            "_comment": "Before writing write class, gather requirements for writing data into db. This will include data type requirements set by Tejas and team, and any other requirement like space between commas, string manipulations etc",
+                                                            "order": 11,
+                                                            "duration": 3,
+                                                            "resources": ["Rohit","Tejas_and_team"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Existing_client_Code_changes_part_2":  {
+                                                            "_comment": "Allocate time to write new code or make changes to existing code. Any meeting with clients will also be accomodated into this time for back and forth discussions",
+                                                            "order": 11,
+                                                            "duration": 5,
+                                                            "resources": ["Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Write_class_coding":  {
+                                                            "_comment": "Code the write_class",
+                                                            "order": 12,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Existing_client_Code_changes_part_3":  {
+                                                            "_comment": "Allocate time to write new code or make changes to existing code. Any meeting with clients will also be accomodated into this time for back and forth discussions",
+                                                            "order": 12,
+                                                            "duration": 5,
+                                                            "resources": ["Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Write_tests_for_write_class":  {
+                                                            "_comment": "",
+                                                            "order": 13,
+                                                            "duration": 5,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Existing_client_Code_changes_part_4":  {
+                                                            "_comment": "Allocate time to write new code or make changes to existing code. Any meeting with clients will also be accomodated into this time for back and forth discussions",
+                                                            "order": 13,
+                                                            "duration": 5,
+                                                            "resources": ["Pratik","Abhijeet"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Complete_unfinished_work_and_scope_for_break":  {
+                                                            "_comment": " Complete any and all unfinised work, adjust for holiday",
+                                                            "order": 14,
+                                                            "duration": 5,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "ML2_Phase2_Project_Checkpoint":  {
+                                                            "_comment": " Assess progress with business leaders, change project plan if needed (add or substract tasks). Hold meetings with all stakeholders and get viewpoint",
+                                                            "order": 15,
+                                                            "duration": 5,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani","Hari","Girish","Tejas_and_team"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Documentation_Review":  {
+                                                            "_comment": " Review all documentation upto now. Get signoff from project stakeholders",
+                                                            "order": 15,
+                                                            "duration": 5,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani","Hari","Girish","Tejas_and_team"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Code_Review":  {
+                                                            "_comment": " Review all code written upto now. Check for breakpoints,",
+                                                            "order": 15,
+                                                            "duration": 5,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani","Hari","Girish","Tejas_and_team"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Testing_Review":  {
+                                                            "_comment": " Review all tests written upto now. Add more tests if required",
+                                                            "order": 15,
+                                                            "duration": 5,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani","Hari","Girish","Tejas_and_team"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Test_code_with_real_data":  {
+                                                            "_comment": " Run code in prod parallel in a separate folder. Code is still not integrated with existing pipeline, so this code testing will be done independently by EpowerX team, without collaborating with Viteos members like Tejas and team or other stakeholders. That will be covered later",
+                                                            "order": 16,
+                                                            "duration": 5,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani","Hari","Girish","Tejas_and_team"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
                                                 }
-
                                                }
 
                                       },
-              "new_code_integration":     {
-                                      "_comment_color": "Red",
-                                      "color": "#FF0000",
+              "ApiPlusNewClients":     {
+                                      "_comment_color": "Magenta",
+                                      "color": "#FF00FF",
                                       "order": 3,
                                       "tasks": {
-
+                                                "Choose_API_client_like_Postman_or_Python_Connexion_Swagget_combo": {
+                                                            "_comment": " Based on ease of use in the Viteos system (Postman might have problems within Viteos system), choose API client and stick to it",
+                                                            "order": 1,
+                                                            "duration": 2,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                },
+                                                "Make_rough_framework_of_API_endpoints": {
+                                                            "_comment": " Make a rough framework of API endpoints with relation to GET, POST, DELETE, PUT requests",
+                                                            "order": 1,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                },
+                                                "Configure_API_internal_database": {
+                                                            "_comment": " Research what db is best suited for the API being built, along with what options are available within Viteos server. MongoDB might be the best option to move forward, but there might be other options available as well",
+                                                            "order": 2,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                }
+                                               }
+                                      },
+              "ExistingClientsNewCodeIntegration":     {
+                                      "_comment_color": "Chocolate",
+                                      "color": "#D2691E",
+                                      "order": 4,
+                                      "tasks": {
+                                                "Existing_client_Plan_integration_with_existing_Viteos_stack": {
+                                                            "_comment": " EpowerX to explain new codebase to Tejas_and_team and get their perspective if they want to ",
+                                                            "order": 1,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani","Hari","Girish"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                }
                                                }
                                       }
 

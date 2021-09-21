@@ -1,6 +1,7 @@
 from datetime import datetime, date, timedelta
 import gantt
 import json
+import os
 class ReadTimelineJson:
     time_continued_values_list = ["False, take from ML2_Phase2_start_date",
                                   "First task encountered in task order",
@@ -333,7 +334,10 @@ class CustomGantt(ReadTimelineJson):
         super().__init__(param_json_filepath)
         if(param_python_file_filepath_to_append_to is not None):
             if(param_python_file_filepath_to_append_to.strip() != ""):
+
                 self.filepath_to_append_to = param_python_file_filepath_to_append_to
+                if os.path.isfile(self.filepath_to_append_to) or os.path.islink(self.filepath_to_append_to):
+                    os.remove(self.filepath_to_append_to)  # remove the file
             else:
                 raise Exception("param_python_file_filepath_to_append_to is empty string. Please give a value")
         else:
@@ -431,7 +435,7 @@ class CustomGantt(ReadTimelineJson):
             file_to_write.write("all_projects.add_task(project_{format_project_name})".format(format_project_name=project))
 
         file_to_write.write("\n")
-        file_to_write.write("all_projects.make_svg_for_resources(filename=\"{format_all_projects_svg_filepath}_daily_scale.svg\",\n".format(format_all_projects_svg_filepath=self.all_projects_svg_filepath))
+        file_to_write.write("all_projects.make_svg_for_resources(filename=\"{format_all_projects_svg_filepath}_resources_daily_scale.svg\",\n".format(format_all_projects_svg_filepath=self.all_projects_svg_filepath))
         file_to_write.write("                                    today=date({format_all_projects_today_date_year},{format_all_projects_today_date_month},{format_all_projects_today_date_day}),\n".format(format_all_projects_today_date_year=self.all_projects_today_date_year,
                                                                                                                                                                          format_all_projects_today_date_month=self.all_projects_today_date_month,
                                                                                                                                                                          format_all_projects_today_date_day=self.all_projects_today_date_day))
@@ -443,10 +447,48 @@ class CustomGantt(ReadTimelineJson):
                                                                                                                                                                          format_all_projects_end_date_day=self.all_projects_end_date_day))
         file_to_write.write("                                    scale=gantt.DRAW_WITH_DAILY_SCALE)")
 
+        file_to_write.write("\n")
+        file_to_write.write("all_projects.make_svg_for_tasks(filename=\"{format_all_projects_svg_filepath}_tasks_daily_scale.svg\",\n".format(format_all_projects_svg_filepath=self.all_projects_svg_filepath))
+        file_to_write.write("                                    today=date({format_all_projects_today_date_year},{format_all_projects_today_date_month},{format_all_projects_today_date_day}),\n".format(format_all_projects_today_date_year=self.all_projects_today_date_year,
+                                                                                                                                                                         format_all_projects_today_date_month=self.all_projects_today_date_month,
+                                                                                                                                                                         format_all_projects_today_date_day=self.all_projects_today_date_day))
+        file_to_write.write("                                    start=date({format_all_projects_start_date_year},{format_all_projects_start_date_month},{format_all_projects_start_date_day}),\n".format(format_all_projects_start_date_year=self.all_projects_start_date_year,
+                                                                                                                                                                         format_all_projects_start_date_month=self.all_projects_start_date_month,
+                                                                                                                                                                         format_all_projects_start_date_day=self.all_projects_start_date_day))
+        file_to_write.write("                                    end=date({format_all_projects_end_date_year},{format_all_projects_end_date_month},{format_all_projects_end_date_day}),\n".format(format_all_projects_end_date_year=self.all_projects_end_date_year,
+                                                                                                                                                                         format_all_projects_end_date_month=self.all_projects_end_date_month,
+                                                                                                                                                                         format_all_projects_end_date_day=self.all_projects_end_date_day))
+        file_to_write.write("                                    scale=gantt.DRAW_WITH_DAILY_SCALE)")
+        file_to_write.write("\n")
+        file_to_write.write("all_projects.make_svg_for_resources(filename=\"{format_all_projects_svg_filepath}_resources_weekly_scale.svg\",\n".format(format_all_projects_svg_filepath=self.all_projects_svg_filepath))
+        file_to_write.write("                                    today=date({format_all_projects_today_date_year},{format_all_projects_today_date_month},{format_all_projects_today_date_day}),\n".format(format_all_projects_today_date_year=self.all_projects_today_date_year,
+                                                                                                                                                                         format_all_projects_today_date_month=self.all_projects_today_date_month,
+                                                                                                                                                                         format_all_projects_today_date_day=self.all_projects_today_date_day))
+        file_to_write.write("                                    start=date({format_all_projects_start_date_year},{format_all_projects_start_date_month},{format_all_projects_start_date_day}),\n".format(format_all_projects_start_date_year=self.all_projects_start_date_year,
+                                                                                                                                                                         format_all_projects_start_date_month=self.all_projects_start_date_month,
+                                                                                                                                                                         format_all_projects_start_date_day=self.all_projects_start_date_day))
+        file_to_write.write("                                    end=date({format_all_projects_end_date_year},{format_all_projects_end_date_month},{format_all_projects_end_date_day}),\n".format(format_all_projects_end_date_year=self.all_projects_end_date_year,
+                                                                                                                                                                         format_all_projects_end_date_month=self.all_projects_end_date_month+3,
+                                                                                                                                                                         format_all_projects_end_date_day=self.all_projects_end_date_day))
+        file_to_write.write("                                    scale=gantt.DRAW_WITH_WEEKLY_SCALE)")
+        file_to_write.write("\n")
+        file_to_write.write("all_projects.make_svg_for_tasks(filename=\"{format_all_projects_svg_filepath}_tasks_weekly_scale.svg\",\n".format(format_all_projects_svg_filepath=self.all_projects_svg_filepath))
+        file_to_write.write("                                    today=date({format_all_projects_today_date_year},{format_all_projects_today_date_month},{format_all_projects_today_date_day}),\n".format(format_all_projects_today_date_year=self.all_projects_today_date_year,
+                                                                                                                                                                         format_all_projects_today_date_month=self.all_projects_today_date_month,
+                                                                                                                                                                         format_all_projects_today_date_day=self.all_projects_today_date_day))
+        file_to_write.write("                                    start=date({format_all_projects_start_date_year},{format_all_projects_start_date_month},{format_all_projects_start_date_day}),\n".format(format_all_projects_start_date_year=self.all_projects_start_date_year,
+                                                                                                                                                                         format_all_projects_start_date_month=self.all_projects_start_date_month,
+                                                                                                                                                                         format_all_projects_start_date_day=self.all_projects_start_date_day))
+        file_to_write.write("                                    end=date({format_all_projects_end_date_year},{format_all_projects_end_date_month},{format_all_projects_end_date_day}),\n".format(format_all_projects_end_date_year=self.all_projects_end_date_year,
+                                                                                                                                                                         format_all_projects_end_date_month=self.all_projects_end_date_month+3,
+                                                                                                                                                                         format_all_projects_end_date_day=self.all_projects_end_date_day))
+        file_to_write.write("                                    scale=gantt.DRAW_WITH_WEEKLY_SCALE)")
+
 # End of class CustomGantt
 if __name__ == '__main__':
     from custom_gantt import ReadTimelineJson, CustomGantt
     import pprint
+
     custom_gantt_obj = CustomGantt('timeline_final.json', 'custom_gantt_task_final.py', 'all_projects_timeline_final')
     import_statement_list = ["import gantt","from datetime import date"]
     py_file_to_execute_name = 'custom_gantt_py_file.py'
