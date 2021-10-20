@@ -3,7 +3,7 @@
   "_developer": "Rohit Singh Chauhan",
   "_all_date_formats": "dd-mm-yyyy",
   "_created_date": "08-09-2021",
-  "ML2_Phase2_start_date": "20-09-2021",
+  "ML2_Phase2_start_date": "01-10-2021",
 
   "projects": {
               "Planning":    {
@@ -363,7 +363,7 @@
                                                             "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their break resolution. Rani to setup meetings",
                                                             "order": 4,
                                                             "duration": 6,
-                                                            "resources": ["Pratik","Rani"],
+                                                            "resources": ["Pratik","Rohit","Rani"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
@@ -387,7 +387,7 @@
                                                             "_comment": " Write rough unstructured code for break resolution of clients 1 and 2 and check what accuracy percentage we are getting. ",
                                                             "order": 5,
                                                             "duration": 6,
-                                                            "resources": ["Pratik","Rani"],
+                                                            "resources": ["Pratik","Rohit","Rani"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
@@ -571,7 +571,7 @@
                                                             "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their break resolution. Rani to setup meetings",
                                                             "order": 3,
                                                             "duration": 6,
-                                                            "resources": ["Pratik","Rani"],
+                                                            "resources": ["Pratik","Rohit","Rani"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
@@ -643,7 +643,7 @@
                                                             "_comment": " Write rough unstructured code for break resolution of clients 3 and 4 and check what accuracy percentage we are getting. ",
                                                             "order": 5,
                                                             "duration": 7,
-                                                            "resources": ["Pratik","Rani"],
+                                                            "resources": ["Pratik","Rohit","Rani"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
@@ -667,7 +667,7 @@
                                                             "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their break resolution. Rani to setup meetings",
                                                             "order": 6.2,
                                                             "duration": 6,
-                                                            "resources": ["Pratik","Rani"],
+                                                            "resources": ["Pratik","Rohit","Rani"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
@@ -683,13 +683,45 @@
                                                             "_comment": " Write rough unstructured code for break resolution of clients 5 and 6 and check what accuracy percentage we are getting. ",
                                                             "order": 6.3,
                                                             "duration": 7,
-                                                            "resources": ["Pratik","Rani"],
+                                                            "resources": ["Pratik","Rohit","Rani"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest task in previous order"
                                                           },
                                                 "New_clients_write_rough_code_for_comment_resolution_procedure_for_new_client_5_and_6_all_setups":  {
                                                             "_comment": " Write rough unstructured code for comment resolution of clients 5 and 6 and check what accuracy percentage we are getting. ",
                                                             "order": 6.3,
+                                                            "duration": 7,
+                                                            "resources": ["Abhijeet","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "New_clients_Discuss_first_level_of_break_resolution_procedure_for_new_client_7_and_8_all_setups":  {
+                                                            "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their break resolution. Rani to setup meetings",
+                                                            "order": 6.4,
+                                                            "duration": 6,
+                                                            "resources": ["Pratik","Rohit","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_Discuss_first_level_of_comment_resolution_procedure_for_new_client_7_and_8_all_setups":  {
+                                                            "_comment": " Pick two new clients based on prelimnary analysis and hold talks with business about their comment resolution. Rani to setup meetings",
+                                                            "order": 6.4,
+                                                            "duration": 6,
+                                                            "resources": ["Abhijeet","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "New_clients_write_rough_code_for_break_resolution_procedure_for_new_client_7_and_8_all_setups":  {
+                                                            "_comment": " Write rough unstructured code for break resolution of clients 5 and 6 and check what accuracy percentage we are getting. ",
+                                                            "order": 6.5,
+                                                            "duration": 7,
+                                                            "resources": ["Pratik","Rohit","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                          },
+                                                "New_clients_write_rough_code_for_comment_resolution_procedure_for_new_client_7_and_8_all_setups":  {
+                                                            "_comment": " Write rough unstructured code for comment resolution of clients 5 and 6 and check what accuracy percentage we are getting. ",
+                                                            "order": 6.5,
                                                             "duration": 7,
                                                             "resources": ["Abhijeet","Rani"],
                                                             "state": "TBD",
@@ -903,6 +935,14 @@
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
                                                 },
+                                                "Write_new_functions_to_incorporate_any_new_architecture_for_break_prediction_architecture_class": {
+                                                            "_comment": " Based on ease of use in the Viteos system (Postman might have problems within Viteos system), choose API client and stick to it",
+                                                            "order": 1,
+                                                            "duration": 2,
+                                                            "resources": ["Pratik"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest project"
+                                                },
                                                 "Make_rough_framework_of_API_endpoints": {
                                                             "_comment": " Make a rough framework of API endpoints with relation to GET, POST, DELETE, PUT requests",
                                                             "order": 1,
@@ -917,8 +957,41 @@
                                                             "duration": 4,
                                                             "resources": ["Rohit"],
                                                             "state": "TBD",
-                                                            "time_continued": "True, take from lastest project"
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Code_Javascript_UI_for_API_endpoints": {
+                                                            "_comment": " The UI component of API will be written in Javascript. Prepare the Javascipt code for UI",
+                                                            "order": 3,
+                                                            "duration": 7,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Code_HTML_CSS_part_of_UI_for_API_endpoints": {
+                                                            "_comment": " There will be certain HTML and CSS components of the API as well. Prepare the CSS and HTML code for UI",
+                                                            "order": 4,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Integrate_the_logging_module_with_API_endpoints": {
+                                                            "_comment": " The logs generated by the ML code will be available to see on the API as well. Integrate the logging module with the API as well",
+                                                            "order": 5,
+                                                            "duration": 4,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
+                                                },
+                                                "Build_backend_for_API_placeholder_task": {
+                                                            "_comment": " Build the entire backend for the API. Since this task will evolve once previous parts of the project get completed, keeping a placeholder for tasks to come",
+                                                            "order": 5,
+                                                            "duration": 10,
+                                                            "resources": ["Rohit"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
                                                 }
+
                                                }
                                       },
               "ExistingClientsNewCodeIntegration":     {
@@ -933,9 +1006,120 @@
                                                             "resources": ["Rohit","Pratik","Abhijeet","Rani","Hari","Girish"],
                                                             "state": "TBD",
                                                             "time_continued": "True, take from lastest project"
+                                                },
+                                                "Placeholder_1_month": {
+                                                            "_comment": " Placeholder of 22 working days. This is just a rough estimate of time for planning, and time mighe be less or more",
+                                                            "order": 2,
+                                                            "duration": 22,
+                                                            "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                            "state": "TBD",
+                                                            "time_continued": "True, take from lastest task in previous order"
                                                 }
                                                }
+                                      },
+              "docker":               {
+                "_comment_color": "DeepPink",
+                "color": "#FF1493",
+                                      "order": 5,
+                                      "tasks": {
+                                        "Placeholder_15_days": {
+                                                    "_comment": " Placeholder of 22 working days. This is just a rough estimate of time for planning, and time mighe be less or more",
+                                                    "order": 2,
+                                                    "duration": 15,
+                                                    "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                    "state": "TBD",
+                                                    "time_continued": "True, take from lastest project"
+                                        }
+
+                                               }
+
+                                      },
+              "jenkins":              {
+                "_comment_color": "Pink",
+                "color": "#FFC0CB",
+                                      "order": 6,
+                                      "tasks": {
+                                        "Placeholder_15_days": {
+                                                    "_comment": " Placeholder of 22 working days. This is just a rough estimate of time for planning, and time mighe be less or more",
+                                                    "order": 2,
+                                                    "duration": 15,
+                                                    "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                    "state": "TBD",
+                                                    "time_continued": "True, take from lastest project"
+
+                                               }
+
                                       }
+                                    },
+              "kubernetes_cloud":     {
+                "_comment_color": "Orange",
+                "color": "#FFA500",
+                                      "order": 7,
+                                      "tasks": {
+                                        "Placeholder_2_months_or_more": {
+                                                    "_comment": " Placeholder of 22 working days. This is just a rough estimate of time for planning, and time mighe be less or more",
+                                                    "order": 2,
+                                                    "duration": 44,
+                                                    "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                    "state": "TBD",
+                                                    "time_continued": "True, take from lastest project"
+
+                                               }
+
+                                      }
+                                    },
+              "deployment":           {
+                "_comment_color": "DarkKhaki",
+                "color": "#BDB76B",
+                                      "order": 8,
+                                      "tasks": {
+                                        "Placeholder_15_days": {
+                                                    "_comment": " Placeholder of 22 working days. This is just a rough estimate of time for planning, and time mighe be less or more",
+                                                    "order": 2,
+                                                    "duration": 15,
+                                                    "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                    "state": "TBD",
+                                                    "time_continued": "True, take from lastest project"
+
+                                               }
+
+                                      }
+                                    },
+              "testing":              {
+                "_comment_color": "Indigo",
+                "color": "#4B0082",
+                                      "order": 9,
+                                      "tasks": {
+                                        "Placeholder_15_days": {
+                                                    "_comment": " Placeholder of 22 working days. This is just a rough estimate of time for planning, and time mighe be less or more",
+                                                    "order": 2,
+                                                    "duration": 15,
+                                                    "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                    "state": "TBD",
+                                                    "time_continued": "True, take from lastest project"
+
+                                               }
+
+                                      }
+                                    },
+              "user_approval":        {
+                "_comment_color": "Teal",
+                "color": "#008080",
+                                      "order": 10,
+                                      "tasks": {
+                                        "Placeholder_10_days": {
+                                                    "_comment": " Placeholder of 22 working days. This is just a rough estimate of time for planning, and time mighe be less or more",
+                                                    "order": 2,
+                                                    "duration": 10,
+                                                    "resources": ["Rohit","Pratik","Abhijeet","Rani"],
+                                                    "state": "TBD",
+                                                    "time_continued": "True, take from lastest project"
+
+                                               }
+
+                                      }
+                                    }
+
 
       }
 }
